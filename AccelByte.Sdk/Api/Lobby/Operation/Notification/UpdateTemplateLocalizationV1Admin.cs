@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// updateTemplateLocalizationV1Admin
     ///
-    /// Update template localization
-    /// 
-    /// Action Code: 50208
+    /// Update the content and subject of an existing notification template localization.
     /// </summary>
     public class UpdateTemplateLocalizationV1Admin : AccelByte.Sdk.Core.Operation
     {

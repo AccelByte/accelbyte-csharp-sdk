@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteTopicHandler
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:ASYNCMESSAGING:TOPICS [DELETE]`
-    /// 
     /// Delete Async Messaging Topic inside a game namespace given its topic name.
     /// </summary>
     public class DeleteTopicHandler : AccelByte.Sdk.Core.Operation

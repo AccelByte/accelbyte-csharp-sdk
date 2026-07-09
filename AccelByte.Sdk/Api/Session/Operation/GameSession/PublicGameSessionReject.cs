@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// publicGameSessionReject
     ///
-    /// Reject a game session invitation.
+    /// Rejects a pending game session invitation. The caller must have INVITED status. The session invitation will be marked as REJECTED.
     /// </summary>
     public class PublicGameSessionReject : AccelByte.Sdk.Core.Operation
     {

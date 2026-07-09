@@ -16,7 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicWebLinkPlatform
     ///
-    /// Generates a third party login page which will redirect to the establish API.
+    /// Generates a redirect to a third party login page for account linking authentication.
+    /// 
     /// Supported platforms:
     /// - ps4web
     /// - xblweb
@@ -30,6 +31,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// - discord
     /// - amazon
     /// - oculusweb
+    /// 
+    /// ## New API version
+    /// 
+    /// This API remains fully functional, but `GET /users/me/platforms/{platformId}/web/reauth` is recommended for new integrations.
     /// </summary>
     public class PublicWebLinkPlatform : AccelByte.Sdk.Core.Operation
     {

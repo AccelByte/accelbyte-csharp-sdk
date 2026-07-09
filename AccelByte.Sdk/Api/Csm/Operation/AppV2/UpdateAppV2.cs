@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// UpdateAppV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP [UPDATE]`
-    /// 
-    /// Update app info provided on request body
+    /// Update app info provided on request body%!(EXTRA string=ADMIN:NAMESPACE:{namespace}:EXTEND:APP, string=UPDATE)
     /// </summary>
     public class UpdateAppV2 : AccelByte.Sdk.Core.Operation
     {

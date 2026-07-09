@@ -172,6 +172,7 @@
 | `apimodels.CreateTagResp` | [ApimodelsCreateTagResp](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsCreateTagResp.cs) |
 | `apimodels.DeleteInventoryReq` | [ApimodelsDeleteInventoryReq](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsDeleteInventoryReq.cs) |
 | `apimodels.ErrorResponse` | [ApimodelsErrorResponse](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsErrorResponse.cs) |
+| `apimodels.IntegrationConfigurationReq` | [ApimodelsIntegrationConfigurationReq](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsIntegrationConfigurationReq.cs) |
 | `apimodels.IntegrationConfigurationResp` | [ApimodelsIntegrationConfigurationResp](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsIntegrationConfigurationResp.cs) |
 | `apimodels.InventoryConfig` | [ApimodelsInventoryConfig](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsInventoryConfig.cs) |
 | `apimodels.InventoryConfigurationReq` | [ApimodelsInventoryConfigurationReq](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsInventoryConfigurationReq.cs) |

@@ -16,8 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicProcessWebLinkPlatformV3
     ///
-    /// Processes third party account link and returns the link status directly instead of redirecting to the original page.
-    /// The param **state** comes from the response of `/users/me/platforms/{platformId}/web/link`
+    /// Completes the third party account link and returns the link status directly instead of redirecting to the **redirectUri** defined when calling the `GET /users/me/platforms/{platformId}/web/link` endpoint.
+    /// 
     /// Supported platforms:
     /// - ps4web
     /// - xblweb
@@ -31,6 +31,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// - discord
     /// - amazon
     /// - oculusweb
+    /// 
+    /// ## New API version
+    /// 
+    /// This API remains fully functional, but `POST /users/me/platforms/{platformId}/web/reauth/process` is recommended for new integrations.
     /// </summary>
     public class PublicProcessWebLinkPlatformV3 : AccelByte.Sdk.Core.Operation
     {
@@ -133,7 +137,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ModelLinkRequest? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelReAuthRequest? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -142,13 +146,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.ModelLinkRequest>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ModelReAuthRequest>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.ModelLinkRequest>(payload);
+                    return JsonSerializer.Deserialize<Model.ModelReAuthRequest>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelLinkRequest>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ModelReAuthRequest>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);
@@ -156,7 +160,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             throw new HttpResponseException(code, payloadString);
         }
 
-        public Model.ModelLinkRequest<T1>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelReAuthRequest<T1>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -164,11 +168,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ModelLinkRequest<T1>>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ModelReAuthRequest<T1>>(payload, ResponseJsonOptions);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelLinkRequest<T1>>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ModelReAuthRequest<T1>>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

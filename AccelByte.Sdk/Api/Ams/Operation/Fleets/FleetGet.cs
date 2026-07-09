@@ -27,12 +27,20 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             : OperationBuilder<FleetGetBuilder>
         {
 
+            public bool? IncludeInactiveRegions { get; set; }
+
 
 
 
 
             internal FleetGetBuilder() { }
 
+
+            public FleetGetBuilder SetIncludeInactiveRegions(bool _includeInactiveRegions)
+            {
+                IncludeInactiveRegions = _includeInactiveRegions;
+                return this;
+            }
 
 
 
@@ -64,6 +72,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             PathParams["fleetID"] = fleetID;
             PathParams["namespace"] = namespace_;
 
+            if (builder.IncludeInactiveRegions != null) QueryParams["includeInactiveRegions"] = Convert.ToString(builder.IncludeInactiveRegions)!;
 
 
 
@@ -76,12 +85,14 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
         public FleetGet(
             string fleetID,
-            string namespace_
+            string namespace_,
+            bool? includeInactiveRegions
         )
         {
             PathParams["fleetID"] = fleetID;
             PathParams["namespace"] = namespace_;
 
+            if (includeInactiveRegions != null) QueryParams["includeInactiveRegions"] = Convert.ToString(includeInactiveRegions)!;
 
 
 

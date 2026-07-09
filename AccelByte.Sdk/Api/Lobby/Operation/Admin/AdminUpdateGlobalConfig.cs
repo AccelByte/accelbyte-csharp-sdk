@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminUpdateGlobalConfig
     ///
-    /// Upsert global configuration data.
+    /// Overwrite existing global configuration with the provided values. Creates the record if it does not exist.
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminUpdateGlobalConfig : AccelByte.Sdk.Core.Operation

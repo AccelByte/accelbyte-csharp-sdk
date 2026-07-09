@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// leaveGameSession
     ///
-    /// Leave a game session.
+    /// Leaves a game session, removing the caller from the member list. If the caller is the leader, leadership transfers to another active member.
     /// </summary>
     public class LeaveGameSession : AccelByte.Sdk.Core.Operation
     {

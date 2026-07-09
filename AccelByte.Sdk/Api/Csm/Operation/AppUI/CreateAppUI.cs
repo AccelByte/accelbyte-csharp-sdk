@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// CreateAppUI
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APPUI [CREATE]`
-    /// 
     /// Creates a new App UI configuration. The App UI can be hosted either by AccelByte (default) or externally.
     /// </summary>
     public class CreateAppUI : AccelByte.Sdk.Core.Operation

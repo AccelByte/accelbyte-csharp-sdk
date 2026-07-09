@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// GetListIntegratedAppKeyValueClusterV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:KEYVALUE:CLUSTERS [READ]`
-    /// 
     /// Get the list of Extend Apps integrated with a specific Key-Value cluster. Only active integrations are returned.
     /// </summary>
     public class GetListIntegratedAppKeyValueClusterV2 : AccelByte.Sdk.Core.Operation

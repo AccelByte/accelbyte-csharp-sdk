@@ -16,12 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// publicGetPlayerBlockedByPlayersV1
     ///
-    /// Required valid user authorization
-    /// 
-    /// 
-    /// load get players who blocked this player in a namespace based on user id
-    /// 
-    /// Action Code: 50101
+    /// Load players who have blocked the current user in a namespace.
     /// </summary>
     public class PublicGetPlayerBlockedByPlayersV1 : AccelByte.Sdk.Core.Operation
     {

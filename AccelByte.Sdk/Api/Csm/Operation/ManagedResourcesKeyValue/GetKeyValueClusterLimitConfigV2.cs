@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// GetKeyValueClusterLimitConfigV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:KEYVALUE:CLUSTERS [READ]`
-    /// 
     /// Get Key-Value cluster limit config.
     /// </summary>
     public class GetKeyValueClusterLimitConfigV2 : AccelByte.Sdk.Core.Operation

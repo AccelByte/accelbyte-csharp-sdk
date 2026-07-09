@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// publicKickGameSessionMember
     ///
-    /// Kick member from a game session, only leader can kick member.
+    /// Removes the specified member from a game session. Only the session leader can kick members. The kicked member's status is set to KICKED.
     /// </summary>
     public class PublicKickGameSessionMember : AccelByte.Sdk.Core.Operation
     {

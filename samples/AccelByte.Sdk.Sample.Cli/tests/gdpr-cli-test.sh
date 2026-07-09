@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..43"
+echo "1..49"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -405,62 +405,112 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 37 'PublicGetMyAccountDeletionStatus' test.out
 
-#- 38 S2SGetListFinishedAccountDeletionRequest
+#- 38 PublicSubmitMyHeadlessDeletionRequest
+$CLI_EXE \
+    --sn gdpr \
+    --op PublicSubmitMyHeadlessDeletionRequest \
+    > test.out 2>&1
+eval_tap $? 38 'PublicSubmitMyHeadlessDeletionRequest' test.out
+
+#- 39 PublicSubmitMyHeadlessPersonalDataRequest
+$CLI_EXE \
+    --sn gdpr \
+    --op PublicSubmitMyHeadlessPersonalDataRequest \
+    --email 'WOPel3TiwTycqpVd' \
+    --languageTag 'INXzvkSp0WbvxQWI' \
+    > test.out 2>&1
+eval_tap $? 39 'PublicSubmitMyHeadlessPersonalDataRequest' test.out
+
+#- 40 PublicGenerateMyHeadlessPersonalDataURL
+$CLI_EXE \
+    --sn gdpr \
+    --op PublicGenerateMyHeadlessPersonalDataURL \
+    --requestDate '0QGCOx7eICkauWbF' \
+    > test.out 2>&1
+eval_tap $? 40 'PublicGenerateMyHeadlessPersonalDataURL' test.out
+
+#- 41 PublicGetMyPersonalDataRequests
+$CLI_EXE \
+    --sn gdpr \
+    --op PublicGetMyPersonalDataRequests \
+    > test.out 2>&1
+eval_tap $? 41 'PublicGetMyPersonalDataRequests' test.out
+
+#- 42 PublicSubmitMyPersonalDataRequest
+$CLI_EXE \
+    --sn gdpr \
+    --op PublicSubmitMyPersonalDataRequest \
+    --email 'rSnU7d1BuhdwliTS' \
+    --languageTag 'DdmGVfegiD3mrVQa' \
+    --platformId 'Ur3oT88Dfc7114QF' \
+    --platformToken 'GwTzBVDg5v71kGCE' \
+    > test.out 2>&1
+eval_tap $? 42 'PublicSubmitMyPersonalDataRequest' test.out
+
+#- 43 PublicCancelMyPersonalDataRequest
+$CLI_EXE \
+    --sn gdpr \
+    --op PublicCancelMyPersonalDataRequest \
+    --requestDate 't7h1mVwIQCJmQkvW' \
+    > test.out 2>&1
+eval_tap $? 43 'PublicCancelMyPersonalDataRequest' test.out
+
+#- 44 S2SGetListFinishedAccountDeletionRequest
 $CLI_EXE \
     --sn gdpr \
     --op S2SGetListFinishedAccountDeletionRequest \
     --namespace $AB_NAMESPACE \
-    --end 'WOPel3TiwTycqpVd' \
-    --start 'INXzvkSp0WbvxQWI' \
+    --end 'bQrn2W0VkOF0pQOY' \
+    --start '0UCcViiFKNjkT5hc' \
     > test.out 2>&1
-eval_tap $? 38 'S2SGetListFinishedAccountDeletionRequest' test.out
+eval_tap $? 44 'S2SGetListFinishedAccountDeletionRequest' test.out
 
-#- 39 S2SGetListFinishedPersonalDataRequest
+#- 45 S2SGetListFinishedPersonalDataRequest
 $CLI_EXE \
     --sn gdpr \
     --op S2SGetListFinishedPersonalDataRequest \
     --namespace $AB_NAMESPACE \
-    --end '0QGCOx7eICkauWbF' \
-    --start 'rSnU7d1BuhdwliTS' \
+    --end 'ONCaOyATBFgqLeAz' \
+    --start 'vdcUEhWRo6ROvbuP' \
     > test.out 2>&1
-eval_tap $? 39 'S2SGetListFinishedPersonalDataRequest' test.out
+eval_tap $? 45 'S2SGetListFinishedPersonalDataRequest' test.out
 
-#- 40 S2SGetDataRequestByRequestID
+#- 46 S2SGetDataRequestByRequestID
 $CLI_EXE \
     --sn gdpr \
     --op S2SGetDataRequestByRequestID \
     --namespace $AB_NAMESPACE \
-    --requestId 'DdmGVfegiD3mrVQa' \
+    --requestId 'Qwl9dVfJQGkDR00o' \
     > test.out 2>&1
-eval_tap $? 40 'S2SGetDataRequestByRequestID' test.out
+eval_tap $? 46 'S2SGetDataRequestByRequestID' test.out
 
-#- 41 S2SSubmitUserAccountDeletionRequest
+#- 47 S2SSubmitUserAccountDeletionRequest
 $CLI_EXE \
     --sn gdpr \
     --op S2SSubmitUserAccountDeletionRequest \
     --namespace $AB_NAMESPACE \
-    --userId 'Ur3oT88Dfc7114QF' \
+    --userId 'fXsbnEzHiRs0NmGh' \
     > test.out 2>&1
-eval_tap $? 41 'S2SSubmitUserAccountDeletionRequest' test.out
+eval_tap $? 47 'S2SSubmitUserAccountDeletionRequest' test.out
 
-#- 42 S2SRequestDataRetrieval
+#- 48 S2SRequestDataRetrieval
 $CLI_EXE \
     --sn gdpr \
     --op S2SRequestDataRetrieval \
     --namespace $AB_NAMESPACE \
-    --userId 'GwTzBVDg5v71kGCE' \
+    --userId 'xv1vuN7Xv6OuG6RR' \
     > test.out 2>&1
-eval_tap $? 42 'S2SRequestDataRetrieval' test.out
+eval_tap $? 48 'S2SRequestDataRetrieval' test.out
 
-#- 43 S2SGeneratePersonalDataURL
+#- 49 S2SGeneratePersonalDataURL
 $CLI_EXE \
     --sn gdpr \
     --op S2SGeneratePersonalDataURL \
     --namespace $AB_NAMESPACE \
-    --requestDate 't7h1mVwIQCJmQkvW' \
-    --userId 'bQrn2W0VkOF0pQOY' \
+    --requestDate '1jPh8RblvnfNiABR' \
+    --userId 'f1gdXM7QlAlnjAfg' \
     > test.out 2>&1
-eval_tap $? 43 'S2SGeneratePersonalDataURL' test.out
+eval_tap $? 49 'S2SGeneratePersonalDataURL' test.out
 
 
 # remove artifacts

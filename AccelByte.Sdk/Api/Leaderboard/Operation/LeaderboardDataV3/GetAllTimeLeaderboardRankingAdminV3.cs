@@ -29,6 +29,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             : OperationBuilder<GetAllTimeLeaderboardRankingAdminV3Builder>
         {
 
+            public bool? IncludeHiddenUsers { get; set; }
+
             public long? Limit { get; set; }
 
             public long? Offset { get; set; }
@@ -39,6 +41,12 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
             internal GetAllTimeLeaderboardRankingAdminV3Builder() { }
 
+
+            public GetAllTimeLeaderboardRankingAdminV3Builder SetIncludeHiddenUsers(bool _includeHiddenUsers)
+            {
+                IncludeHiddenUsers = _includeHiddenUsers;
+                return this;
+            }
 
             public GetAllTimeLeaderboardRankingAdminV3Builder SetLimit(long _limit)
             {
@@ -82,6 +90,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["leaderboardCode"] = leaderboardCode;
             PathParams["namespace"] = namespace_;
 
+            if (builder.IncludeHiddenUsers != null) QueryParams["includeHiddenUsers"] = Convert.ToString(builder.IncludeHiddenUsers)!;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
 
@@ -97,6 +106,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         public GetAllTimeLeaderboardRankingAdminV3(
             string leaderboardCode,
             string namespace_,
+            bool? includeHiddenUsers,
             long? limit,
             long? offset
         )
@@ -104,6 +114,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             PathParams["leaderboardCode"] = leaderboardCode;
             PathParams["namespace"] = namespace_;
 
+            if (includeHiddenUsers != null) QueryParams["includeHiddenUsers"] = Convert.ToString(includeHiddenUsers)!;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
 

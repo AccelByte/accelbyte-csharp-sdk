@@ -16,12 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// deleteNotificationTopicV1Admin
     ///
-    /// Delete topic information by topic name.
-    /// 
-    /// topic should be alphabets, no special char except underscore, uppercase and no spacing. for example: TOPIC_TEST.
-    /// Already existing topic can not be created
-    /// 
-    /// Action Code: 50217
+    /// Delete a notification topic by topic name.
     /// </summary>
     public class DeleteNotificationTopicV1Admin : AccelByte.Sdk.Core.Operation
     {

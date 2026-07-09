@@ -36,8 +36,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public QueryFulfillmentHistoriesStatus? Status { get; set; }
 
-            public string? UserId { get; set; }
-
 
 
 
@@ -63,22 +61,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryFulfillmentHistoriesBuilder SetUserId(string _userId)
-            {
-                UserId = _userId;
-                return this;
-            }
-
 
 
 
 
             public QueryFulfillmentHistories Build(
-                string namespace_
+                string namespace_,
+                string userId
             )
             {
                 QueryFulfillmentHistories op = new QueryFulfillmentHistories(this,
-                    namespace_
+                    namespace_,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -90,7 +84,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private QueryFulfillmentHistories(QueryFulfillmentHistoriesBuilder builder,
-            string namespace_
+            string namespace_,
+            string userId
         )
         {
             PathParams["namespace"] = namespace_;
@@ -98,7 +93,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
-            if (builder.UserId is not null) QueryParams["userId"] = builder.UserId;
+            if (userId is not null) QueryParams["userId"] = userId;
 
 
 
@@ -114,7 +109,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             int? limit,
             int? offset,
             QueryFulfillmentHistoriesStatus? status,
-            string? userId
+            string userId
         )
         {
             PathParams["namespace"] = namespace_;

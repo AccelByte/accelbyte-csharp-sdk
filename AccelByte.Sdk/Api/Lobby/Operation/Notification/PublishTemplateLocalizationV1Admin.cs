@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// publishTemplateLocalizationV1Admin
     ///
-    /// Publish notification template draft. Empty draft can not be published.
-    /// 
-    /// Action Code: 50210
+    /// Publish a notification template draft. Empty drafts cannot be published.
     /// </summary>
     public class PublishTemplateLocalizationV1Admin : AccelByte.Sdk.Core.Operation
     {

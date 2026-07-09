@@ -69,26 +69,26 @@ namespace AccelByte.Sdk.Api
             return await ((Challenge.Wrapper.ChallengeProgression)builder.WrapperObject!).AdminGetUserProgressionAsync(op);
         }
         public static void Execute(
-            this EvaluateMyProgress.EvaluateMyProgressBuilder builder,
+            this PublicEvaluateMyProgress.PublicEvaluateMyProgressBuilder builder,
             string namespace_
         )
         {
-            EvaluateMyProgress op = builder.Build(
+            PublicEvaluateMyProgress op = builder.Build(
                 namespace_
             );
 
-            ((Challenge.Wrapper.ChallengeProgression)builder.WrapperObject!).EvaluateMyProgress(op);
+            ((Challenge.Wrapper.ChallengeProgression)builder.WrapperObject!).PublicEvaluateMyProgress(op);
         }
         public static async Task ExecuteAsync(
-            this EvaluateMyProgress.EvaluateMyProgressBuilder builder,
+            this PublicEvaluateMyProgress.PublicEvaluateMyProgressBuilder builder,
             string namespace_
         )
         {
-            EvaluateMyProgress op = builder.Build(
+            PublicEvaluateMyProgress op = builder.Build(
                 namespace_
             );
 
-            await ((Challenge.Wrapper.ChallengeProgression)builder.WrapperObject!).EvaluateMyProgressAsync(op);
+            await ((Challenge.Wrapper.ChallengeProgression)builder.WrapperObject!).PublicEvaluateMyProgressAsync(op);
         }
         public static Challenge.Model.ModelUserProgressionResponse? Execute(
             this PublicGetUserProgression.PublicGetUserProgressionBuilder builder,

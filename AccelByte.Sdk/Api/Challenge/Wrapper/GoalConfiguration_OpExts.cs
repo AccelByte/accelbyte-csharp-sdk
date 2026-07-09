@@ -162,5 +162,65 @@ namespace AccelByte.Sdk.Api
 
             await ((Challenge.Wrapper.GoalConfiguration)builder.WrapperObject!).AdminDeleteGoalAsync(op);
         }
+        public static void Execute(
+            this AdminMoveGoalToSlot.AdminMoveGoalToSlotBuilder builder,
+            ModelMoveGoalToSlotRequest body,
+            string challengeCode,
+            string code,
+            string namespace_
+        )
+        {
+            AdminMoveGoalToSlot op = builder.Build(
+                body,
+                challengeCode,
+                code,
+                namespace_
+            );
+
+            ((Challenge.Wrapper.GoalConfiguration)builder.WrapperObject!).AdminMoveGoalToSlot(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminMoveGoalToSlot.AdminMoveGoalToSlotBuilder builder,
+            ModelMoveGoalToSlotRequest body,
+            string challengeCode,
+            string code,
+            string namespace_
+        )
+        {
+            AdminMoveGoalToSlot op = builder.Build(
+                body,
+                challengeCode,
+                code,
+                namespace_
+            );
+
+            await ((Challenge.Wrapper.GoalConfiguration)builder.WrapperObject!).AdminMoveGoalToSlotAsync(op);
+        }
+        public static Challenge.Model.ModelGetSlotsResponse? Execute(
+            this AdminGetChallengeSlots.AdminGetChallengeSlotsBuilder builder,
+            string challengeCode,
+            string namespace_
+        )
+        {
+            AdminGetChallengeSlots op = builder.Build(
+                challengeCode,
+                namespace_
+            );
+
+            return ((Challenge.Wrapper.GoalConfiguration)builder.WrapperObject!).AdminGetChallengeSlots(op);
+        }
+        public static async Task<Challenge.Model.ModelGetSlotsResponse?> ExecuteAsync(
+            this AdminGetChallengeSlots.AdminGetChallengeSlotsBuilder builder,
+            string challengeCode,
+            string namespace_
+        )
+        {
+            AdminGetChallengeSlots op = builder.Build(
+                challengeCode,
+                namespace_
+            );
+
+            return await ((Challenge.Wrapper.GoalConfiguration)builder.WrapperObject!).AdminGetChallengeSlotsAsync(op);
+        }
     }
 }

@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteVariableV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:VARIABLE [DELETE]`
-    /// 
     /// Delete an environment variable by its config id
     /// </summary>
     public class DeleteVariableV2 : AccelByte.Sdk.Core.Operation

@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// getAllNotificationTemplatesV1Admin
     ///
-    /// Get all templates in a namespace
-    /// 
-    /// Action Code: 50203
+    /// Get all notification templates in a namespace.
     /// </summary>
     public class GetAllNotificationTemplatesV1Admin : AccelByte.Sdk.Core.Operation
     {

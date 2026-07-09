@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// GetListOfSecretsV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:SECRET [READ]`
-    /// 
     /// Get list of environment secrets per app
     /// Available Deployment Status:
     /// `deployed` = app config is already deployed

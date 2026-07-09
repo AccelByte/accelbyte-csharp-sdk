@@ -28,6 +28,10 @@ namespace AccelByte.Sdk.Api.Chat.Model
         [JsonPropertyName("maxChatMessageLength")]
         public int? MaxChatMessageLength { get; set; }
 
+        [JsonPropertyName("maxChatMetadataSize")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? MaxChatMetadataSize { get; set; }
+
         [JsonPropertyName("spamChatBurst")]
         public int? SpamChatBurst { get; set; }
 

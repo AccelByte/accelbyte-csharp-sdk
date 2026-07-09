@@ -16,20 +16,18 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// GetSQLAppListV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:SQL:CLUSTERS [READ]`
-    /// 
     /// Get List of Extend App using SQL database by given studio/publisher namespace and the SQL cluster resourceId.
     /// - `available` : The cluster is accessible.
     /// - `updating` : The cluster is being modified and is not yet accessible (e.g., updating min/max ACU).
-    /// - `creating` : The cluster or instance is being created and is not yet accessible.
-    /// - `maintenance` : The cluster is undergoing maintenance operations and is not accessible.
-    /// - `unknown` : The cluster status is not recognized
-    /// - `configuring-replica` : The cluster is configuring replica instances for multi-AZ deployment.
-    /// - `deleting` : The cluster is in the process of being deleted and is not accessible.
     /// - `failed` : The cluster failed to provision or is in an error state and not accessible.
     /// - `stopping` : The cluster is in the process of stopping and will soon become inaccessible.
     /// - `stopped` : The cluster is stopped and not accessible.
     /// - `starting` : The cluster is transitioning from stopped to running, or is rebooting.
+    /// - `creating` : The cluster or instance is being created and is not yet accessible.
+    /// - `deleting` : The cluster is in the process of being deleted and is not accessible.
+    /// - `maintenance` : The cluster is undergoing maintenance operations and is not accessible.
+    /// - `unknown` : The cluster status is not recognized
+    /// - `configuring-replica` : The cluster is configuring replica instances for multi-AZ deployment.
     /// </summary>
     public class GetSQLAppListV2 : AccelByte.Sdk.Core.Operation
     {

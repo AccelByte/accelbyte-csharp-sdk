@@ -31,6 +31,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
             public long? Count { get; set; }
 
+            public bool? IncludeInactiveRegions { get; set; }
+
             public string? Name { get; set; }
 
             public long? Offset { get; set; }
@@ -57,6 +59,12 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             public FleetListBuilder SetCount(long _count)
             {
                 Count = _count;
+                return this;
+            }
+
+            public FleetListBuilder SetIncludeInactiveRegions(bool _includeInactiveRegions)
+            {
+                IncludeInactiveRegions = _includeInactiveRegions;
                 return this;
             }
 
@@ -118,6 +126,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
             if (builder.Active != null) QueryParams["active"] = Convert.ToString(builder.Active)!;
             if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
+            if (builder.IncludeInactiveRegions != null) QueryParams["includeInactiveRegions"] = Convert.ToString(builder.IncludeInactiveRegions)!;
             if (builder.Name is not null) QueryParams["name"] = builder.Name;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
@@ -137,6 +146,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             string namespace_,
             bool? active,
             long? count,
+            bool? includeInactiveRegions,
             string? name,
             long? offset,
             string? region,
@@ -148,6 +158,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
             if (active != null) QueryParams["active"] = Convert.ToString(active)!;
             if (count != null) QueryParams["count"] = Convert.ToString(count)!;
+            if (includeInactiveRegions != null) QueryParams["includeInactiveRegions"] = Convert.ToString(includeInactiveRegions)!;
             if (name is not null) QueryParams["name"] = name;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (region is not null) QueryParams["region"] = region;

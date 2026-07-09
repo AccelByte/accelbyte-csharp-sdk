@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteKeyValueClusterV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:KEYVALUE:CLUSTERS [DELETE]`
-    /// 
     /// Delete Key-Value cluster. Only allowed when cluster status is AVAILABLE or CREATE-FAILED.
     /// Force-deletes all active integrations. Returns resource with status DELETING.
     /// </summary>

@@ -65,7 +65,7 @@
 |---|---|---|---|---|
 | `/csm/v2/admin/namespaces/{namespace}/apps` | POST | GetAppListV2 | [GetAppListV2](../../AccelByte.Sdk/Api/Csm/Operation/AppV2/GetAppListV2.cs) | [GetAppListV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AppV2/GetAppListV2.cs) |
 | `/csm/v2/admin/namespaces/{namespace}/apps/{app}` | GET | GetAppV2 | [GetAppV2](../../AccelByte.Sdk/Api/Csm/Operation/AppV2/GetAppV2.cs) | [GetAppV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AppV2/GetAppV2.cs) |
-| `/csm/v2/admin/namespaces/{namespace}/apps/{app}` | POST | CreateAppV2 | [CreateAppV2](../../AccelByte.Sdk/Api/Csm/Operation/AppV2/CreateAppV2.cs) | [CreateAppV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AppV2/CreateAppV2.cs) |
+| [DEPRECATED] `/csm/v2/admin/namespaces/{namespace}/apps/{app}` | POST | CreateAppV2 | [CreateAppV2](../../AccelByte.Sdk/Api/Csm/Operation/AppV2/CreateAppV2.cs) | [CreateAppV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AppV2/CreateAppV2.cs) |
 | `/csm/v2/admin/namespaces/{namespace}/apps/{app}` | DELETE | DeleteAppV2 | [DeleteAppV2](../../AccelByte.Sdk/Api/Csm/Operation/AppV2/DeleteAppV2.cs) | [DeleteAppV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AppV2/DeleteAppV2.cs) |
 | `/csm/v2/admin/namespaces/{namespace}/apps/{app}` | PATCH | UpdateAppV2 | [UpdateAppV2](../../AccelByte.Sdk/Api/Csm/Operation/AppV2/UpdateAppV2.cs) | [UpdateAppV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AppV2/UpdateAppV2.cs) |
 | `/csm/v2/admin/namespaces/{namespace}/apps/{app}/apply` | POST | ApplyAppConfigV2 | [ApplyAppConfigV2](../../AccelByte.Sdk/Api/Csm/Operation/AppV2/ApplyAppConfigV2.cs) | [ApplyAppConfigV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AppV2/ApplyAppConfigV2.cs) |
@@ -179,6 +179,22 @@
 | `/csm/v3/admin/namespaces/{namespace}/apps/{app}/subscriptions` | GET | GetNotificationSubscriberListV3 | [GetNotificationSubscriberListV3](../../AccelByte.Sdk/Api/Csm/Operation/NotificationSubscriptionV3/GetNotificationSubscriberListV3.cs) | [GetNotificationSubscriberListV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/NotificationSubscriptionV3/GetNotificationSubscriberListV3.cs) |
 | `/csm/v3/admin/namespaces/{namespace}/apps/{app}/subscriptions` | DELETE | DeleteSubscriptionAppNotificationV3 | [DeleteSubscriptionAppNotificationV3](../../AccelByte.Sdk/Api/Csm/Operation/NotificationSubscriptionV3/DeleteSubscriptionAppNotificationV3.cs) | [DeleteSubscriptionAppNotificationV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/NotificationSubscriptionV3/DeleteSubscriptionAppNotificationV3.cs) |
 
+### App V4 Wrapper:  [AppV4](../../AccelByte.Sdk/Api/Csm/Wrapper/AppV4.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/csm/v4/admin/namespaces/{namespace}/apps/{app}/debuginfo` | GET | GetAppDebugInfoV4 | [GetAppDebugInfoV4](../../AccelByte.Sdk/Api/Csm/Operation/AppV4/GetAppDebugInfoV4.cs) | [GetAppDebugInfoV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AppV4/GetAppDebugInfoV4.cs) |
+| `/csm/v4/admin/namespaces/{namespace}/apps/{app}/debugmode` | PUT | UpdateAppDebugModeV4 | [UpdateAppDebugModeV4](../../AccelByte.Sdk/Api/Csm/Operation/AppV4/UpdateAppDebugModeV4.cs) | [UpdateAppDebugModeV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AppV4/UpdateAppDebugModeV4.cs) |
+
+### App Status Progress V4 Wrapper:  [AppStatusProgressV4](../../AccelByte.Sdk/Api/Csm/Wrapper/AppStatusProgressV4.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/csm/v4/admin/namespaces/{namespace}/apps/{app}/status-progress` | GET | GetAppStatusProgressV4 | [GetAppStatusProgressV4](../../AccelByte.Sdk/Api/Csm/Operation/AppStatusProgressV4/GetAppStatusProgressV4.cs) | [GetAppStatusProgressV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AppStatusProgressV4/GetAppStatusProgressV4.cs) |
+
+### App V5 Wrapper:  [AppV5](../../AccelByte.Sdk/Api/Csm/Wrapper/AppV5.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/csm/v5/admin/namespaces/{namespace}/apps/{app}` | POST | CreateAppV5 | [CreateAppV5](../../AccelByte.Sdk/Api/Csm/Operation/AppV5/CreateAppV5.cs) | [CreateAppV5](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AppV5/CreateAppV5.cs) |
+
 
 &nbsp;  
 
@@ -256,6 +272,18 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### App V4 Wrapper:  [AppV4](../../AccelByte.Sdk/Api/Csm/Wrapper/AppV4.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### App Status Progress V4 Wrapper:  [AppStatusProgressV4](../../AccelByte.Sdk/Api/Csm/Wrapper/AppStatusProgressV4.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### App V5 Wrapper:  [AppV5](../../AccelByte.Sdk/Api/Csm/Wrapper/AppV5.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 
 &nbsp;  
 
@@ -263,7 +291,10 @@
 
 | Model | Class |
 |---|---|
+| `apimodel.AppDebugInfoResponse` | [ApimodelAppDebugInfoResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelAppDebugInfoResponse.cs) |
 | `apimodel.AppItem` | [ApimodelAppItem](../../AccelByte.Sdk/Api/Csm/Model/ApimodelAppItem.cs) |
+| `apimodel.AppItemV5` | [ApimodelAppItemV5](../../AccelByte.Sdk/Api/Csm/Model/ApimodelAppItemV5.cs) |
+| `apimodel.AppStatusProgressStep` | [ApimodelAppStatusProgressStep](../../AccelByte.Sdk/Api/Csm/Model/ApimodelAppStatusProgressStep.cs) |
 | `apimodel.AppUIResponse` | [ApimodelAppUIResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelAppUIResponse.cs) |
 | `apimodel.ApplyAppConfigRequest` | [ApimodelApplyAppConfigRequest](../../AccelByte.Sdk/Api/Csm/Model/ApimodelApplyAppConfigRequest.cs) |
 | `apimodel.ApplyConfigItem` | [ApimodelApplyConfigItem](../../AccelByte.Sdk/Api/Csm/Model/ApimodelApplyConfigItem.cs) |
@@ -277,6 +308,7 @@
 | `apimodel.CSMAppLimitsResponse` | [ApimodelCSMAppLimitsResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelCSMAppLimitsResponse.cs) |
 | `apimodel.CreateAppUIRequest` | [ApimodelCreateAppUIRequest](../../AccelByte.Sdk/Api/Csm/Model/ApimodelCreateAppUIRequest.cs) |
 | `apimodel.CreateAppV2Request` | [ApimodelCreateAppV2Request](../../AccelByte.Sdk/Api/Csm/Model/ApimodelCreateAppV2Request.cs) |
+| `apimodel.CreateAppV5Request` | [ApimodelCreateAppV5Request](../../AccelByte.Sdk/Api/Csm/Model/ApimodelCreateAppV5Request.cs) |
 | `apimodel.CreateDeploymentV2Request` | [ApimodelCreateDeploymentV2Request](../../AccelByte.Sdk/Api/Csm/Model/ApimodelCreateDeploymentV2Request.cs) |
 | `apimodel.CreateDeploymentV2Response` | [ApimodelCreateDeploymentV2Response](../../AccelByte.Sdk/Api/Csm/Model/ApimodelCreateDeploymentV2Response.cs) |
 | `apimodel.CreateKeyValueCredentialRequest` | [ApimodelCreateKeyValueCredentialRequest](../../AccelByte.Sdk/Api/Csm/Model/ApimodelCreateKeyValueCredentialRequest.cs) |
@@ -296,6 +328,7 @@
 | `apimodel.GetAppImageListV2Response` | [ApimodelGetAppImageListV2Response](../../AccelByte.Sdk/Api/Csm/Model/ApimodelGetAppImageListV2Response.cs) |
 | `apimodel.GetAppListV2Request` | [ApimodelGetAppListV2Request](../../AccelByte.Sdk/Api/Csm/Model/ApimodelGetAppListV2Request.cs) |
 | `apimodel.GetAppListV2Response` | [ApimodelGetAppListV2Response](../../AccelByte.Sdk/Api/Csm/Model/ApimodelGetAppListV2Response.cs) |
+| `apimodel.GetAppStatusProgressResponse` | [ApimodelGetAppStatusProgressResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelGetAppStatusProgressResponse.cs) |
 | `apimodel.GetDeploymentListV2DataItem` | [ApimodelGetDeploymentListV2DataItem](../../AccelByte.Sdk/Api/Csm/Model/ApimodelGetDeploymentListV2DataItem.cs) |
 | `apimodel.GetDeploymentListV2Request` | [ApimodelGetDeploymentListV2Request](../../AccelByte.Sdk/Api/Csm/Model/ApimodelGetDeploymentListV2Request.cs) |
 | `apimodel.GetDeploymentListV2Response` | [ApimodelGetDeploymentListV2Response](../../AccelByte.Sdk/Api/Csm/Model/ApimodelGetDeploymentListV2Response.cs) |
@@ -355,8 +388,16 @@
 | `apimodel.UpdateAppV2Request` | [ApimodelUpdateAppV2Request](../../AccelByte.Sdk/Api/Csm/Model/ApimodelUpdateAppV2Request.cs) |
 | `apimodel.UpdateConfigurationV2Request` | [ApimodelUpdateConfigurationV2Request](../../AccelByte.Sdk/Api/Csm/Model/ApimodelUpdateConfigurationV2Request.cs) |
 | `apimodel.UpdateConfigurationV2Response` | [ApimodelUpdateConfigurationV2Response](../../AccelByte.Sdk/Api/Csm/Model/ApimodelUpdateConfigurationV2Response.cs) |
+| `apimodel.UpdateDebugModeRequest` | [ApimodelUpdateDebugModeRequest](../../AccelByte.Sdk/Api/Csm/Model/ApimodelUpdateDebugModeRequest.cs) |
 | `apimodel.UpdateSecretConfigurationV2Request` | [ApimodelUpdateSecretConfigurationV2Request](../../AccelByte.Sdk/Api/Csm/Model/ApimodelUpdateSecretConfigurationV2Request.cs) |
 | `apimodel.UploadFileResponse` | [ApimodelUploadFileResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelUploadFileResponse.cs) |
+| `createappparams.AutoscalingRequest` | [CreateappparamsAutoscalingRequest](../../AccelByte.Sdk/Api/Csm/Model/CreateappparamsAutoscalingRequest.cs) |
+| `createappparams.CPURequest` | [CreateappparamsCPURequest](../../AccelByte.Sdk/Api/Csm/Model/CreateappparamsCPURequest.cs) |
+| `createappparams.MemoryRequest` | [CreateappparamsMemoryRequest](../../AccelByte.Sdk/Api/Csm/Model/CreateappparamsMemoryRequest.cs) |
+| `createappparams.ReplicaRequest` | [CreateappparamsReplicaRequest](../../AccelByte.Sdk/Api/Csm/Model/CreateappparamsReplicaRequest.cs) |
+| `domain.AllowedInterceptedPort` | [DomainAllowedInterceptedPort](../../AccelByte.Sdk/Api/Csm/Model/DomainAllowedInterceptedPort.cs) |
+| `domain.DebugPod` | [DomainDebugPod](../../AccelByte.Sdk/Api/Csm/Model/DomainDebugPod.cs) |
+| `domain.ExposedService` | [DomainExposedService](../../AccelByte.Sdk/Api/Csm/Model/DomainExposedService.cs) |
 | `domain.KeyValueClusterConfig` | [DomainKeyValueClusterConfig](../../AccelByte.Sdk/Api/Csm/Model/DomainKeyValueClusterConfig.cs) |
 | `domain.KeyValueResourceConfiguration` | [DomainKeyValueResourceConfiguration](../../AccelByte.Sdk/Api/Csm/Model/DomainKeyValueResourceConfiguration.cs) |
 | `domain.KeyValueUpdateConfiguration` | [DomainKeyValueUpdateConfiguration](../../AccelByte.Sdk/Api/Csm/Model/DomainKeyValueUpdateConfiguration.cs) |
@@ -391,8 +432,6 @@
 | `generated.UpdateConfigurationV1Request` | [GeneratedUpdateConfigurationV1Request](../../AccelByte.Sdk/Api/Csm/Model/GeneratedUpdateConfigurationV1Request.cs) |
 | `generated.UpdateConfigurationV1Response` | [GeneratedUpdateConfigurationV1Response](../../AccelByte.Sdk/Api/Csm/Model/GeneratedUpdateConfigurationV1Response.cs) |
 | `log.AppMessageDeclaration` | [LogAppMessageDeclaration](../../AccelByte.Sdk/Api/Csm/Model/LogAppMessageDeclaration.cs) |
-| `model.AppRedeploymentDetail` | [ModelAppRedeploymentDetail](../../AccelByte.Sdk/Api/Csm/Model/ModelAppRedeploymentDetail.cs) |
-| `model.AppRedeploymentInfo` | [ModelAppRedeploymentInfo](../../AccelByte.Sdk/Api/Csm/Model/ModelAppRedeploymentInfo.cs) |
 | `model.CSMAutoscalingDefaults` | [ModelCSMAutoscalingDefaults](../../AccelByte.Sdk/Api/Csm/Model/ModelCSMAutoscalingDefaults.cs) |
 | `model.ImageScanFinding` | [ModelImageScanFinding](../../AccelByte.Sdk/Api/Csm/Model/ModelImageScanFinding.cs) |
 | `nosqlresource.NoSQLResourceConfiguration` | [NosqlresourceNoSQLResourceConfiguration](../../AccelByte.Sdk/Api/Csm/Model/NosqlresourceNoSQLResourceConfiguration.cs) |

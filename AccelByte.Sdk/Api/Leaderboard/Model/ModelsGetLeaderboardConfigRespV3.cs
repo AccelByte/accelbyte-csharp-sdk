@@ -33,6 +33,9 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
+        [JsonPropertyName("enableServerHiddenFilter")]
+        public bool? EnableServerHiddenFilter { get; set; }
+
         [JsonPropertyName("iconURL")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? IconURL { get; set; }

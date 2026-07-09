@@ -16,7 +16,10 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// GetBackfillProposal
     ///
-    /// Get backfill proposal
+    /// Get backfill proposal for the given session.
+    /// 
+    /// Returns the current pending backfill proposal associated with the session ID.
+    /// Returns 404 if no proposal exists for the session.
     /// </summary>
     public class GetBackfillProposal : AccelByte.Sdk.Core.Operation
     {

@@ -31,22 +31,22 @@ namespace AccelByte.Sdk.Api
             await ((Ams.Wrapper.FleetCommander)builder.WrapperObject!).PortalHealthCheckAsync(op);
         }
         public static void Execute(
-            this Func1.Func1Builder builder
+            this VersionInfo.VersionInfoBuilder builder
         )
         {
-            Func1 op = builder.Build(
+            VersionInfo op = builder.Build(
             );
 
-            ((Ams.Wrapper.FleetCommander)builder.WrapperObject!).Func1(op);
+            ((Ams.Wrapper.FleetCommander)builder.WrapperObject!).VersionInfo(op);
         }
         public static async Task ExecuteAsync(
-            this Func1.Func1Builder builder
+            this VersionInfo.VersionInfoBuilder builder
         )
         {
-            Func1 op = builder.Build(
+            VersionInfo op = builder.Build(
             );
 
-            await ((Ams.Wrapper.FleetCommander)builder.WrapperObject!).Func1Async(op);
+            await ((Ams.Wrapper.FleetCommander)builder.WrapperObject!).VersionInfoAsync(op);
         }
         public static void Execute(
             this BasicHealthCheck.BasicHealthCheckBuilder builder

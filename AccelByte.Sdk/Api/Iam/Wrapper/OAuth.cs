@@ -30,9 +30,9 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
             get { return Operation.GetJWKS.Builder.SetWrapperObject(this); }
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public PlatformTokenRequestHandler.PlatformTokenRequestHandlerBuilder PlatformTokenRequestHandlerOp
+        public NamespaceScopedPlatformTokenGrant.NamespaceScopedPlatformTokenGrantBuilder NamespaceScopedPlatformTokenGrantOp
         {
-            get { return Operation.PlatformTokenRequestHandler.Builder.SetWrapperObject(this); }
+            get { return Operation.NamespaceScopedPlatformTokenGrant.Builder.SetWrapperObject(this); }
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public RevokeUser.RevokeUserBuilder RevokeUserOp
@@ -106,7 +106,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
 #pragma warning restore ab_deprecated_operation
 #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public Model.OauthmodelTokenResponse? PlatformTokenRequestHandler(PlatformTokenRequestHandler input)
+        public Model.OauthmodelTokenResponse? NamespaceScopedPlatformTokenGrant(NamespaceScopedPlatformTokenGrant input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -114,7 +114,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.OauthmodelTokenResponse?> PlatformTokenRequestHandlerAsync(PlatformTokenRequestHandler input)
+        public async Task<Model.OauthmodelTokenResponse?> NamespaceScopedPlatformTokenGrantAsync(NamespaceScopedPlatformTokenGrant input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

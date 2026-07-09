@@ -64,6 +64,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.AppV2)builder.WrapperObject!).GetAppV2Async(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Csm.Model.ApimodelAppItem? Execute(
             this CreateAppV2.CreateAppV2Builder builder,
             ApimodelCreateAppV2Request body,

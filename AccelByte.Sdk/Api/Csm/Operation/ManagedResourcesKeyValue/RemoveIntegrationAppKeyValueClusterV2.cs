@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// RemoveIntegrationAppKeyValueClusterV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:KEYVALUE:INTEGRATE [DELETE]`
-    /// 
     /// Remove integration of an extend app with a cluster. Removes key-value env/secret from app, deletes credential and AWS user.
     /// </summary>
     public class RemoveIntegrationAppKeyValueClusterV2 : AccelByte.Sdk.Core.Operation

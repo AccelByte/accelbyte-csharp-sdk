@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminQueryParties
     ///
-    /// Query parties.
+    /// Returns paginated list of party sessions matching the provided filter criteria. Supports filtering by namespace, members, leader, and joinability mode.
     /// </summary>
     public class AdminQueryParties : AccelByte.Sdk.Core.Operation
     {

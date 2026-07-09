@@ -172,6 +172,7 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value> \
     --active <active value - optional> \
     --count <count value - optional> \
+    --includeInactiveRegions <includeInactiveRegions value - optional> \
     --name <name value - optional> \
     --offset <offset value - optional> \
     --region <region value - optional> \
@@ -205,7 +206,8 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --sn ams \
     --op fleetget \
     --fleetID <fleetID value> \
-    --namespace <namespace value>
+    --namespace <namespace value> \
+    --includeInactiveRegions <includeInactiveRegions value - optional>
 ```
 
 ### Operation FleetUpdate
@@ -462,11 +464,11 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 
 ```
 
-### Operation Func1
+### Operation VersionInfo
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn ams \
-    --op func1 \
+    --op versioninfo \
 
 ```
 

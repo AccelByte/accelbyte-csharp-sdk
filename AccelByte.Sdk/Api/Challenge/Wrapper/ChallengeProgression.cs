@@ -27,9 +27,9 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         {
             get { return Operation.AdminGetUserProgression.Builder.SetWrapperObject(this); }
         }
-        public EvaluateMyProgress.EvaluateMyProgressBuilder EvaluateMyProgressOp
+        public PublicEvaluateMyProgress.PublicEvaluateMyProgressBuilder PublicEvaluateMyProgressOp
         {
-            get { return Operation.EvaluateMyProgress.Builder.SetWrapperObject(this); }
+            get { return Operation.PublicEvaluateMyProgress.Builder.SetWrapperObject(this); }
         }
         public PublicGetUserProgression.PublicGetUserProgressionBuilder PublicGetUserProgressionOp
         {
@@ -73,7 +73,7 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void EvaluateMyProgress(EvaluateMyProgress input)
+        public void PublicEvaluateMyProgress(PublicEvaluateMyProgress input)
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
@@ -81,7 +81,7 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task EvaluateMyProgressAsync(EvaluateMyProgress input)
+        public async Task PublicEvaluateMyProgressAsync(PublicEvaluateMyProgress input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(

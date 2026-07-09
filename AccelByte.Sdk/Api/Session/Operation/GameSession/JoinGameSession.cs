@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// joinGameSession
     ///
-    /// Join a game session.
+    /// Joins a game session. For PASSWORD_PROTECTED sessions, the request body must include the session password. The session must have OPEN or INVITE_ONLY joinability and available slots.
     /// </summary>
     public class JoinGameSession : AccelByte.Sdk.Core.Operation
     {

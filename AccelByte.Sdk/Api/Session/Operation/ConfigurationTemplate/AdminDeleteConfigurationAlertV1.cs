@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminDeleteConfigurationAlertV1
     ///
-    /// Delete configuration alert.
+    /// Deletes the configuration alert for the specified namespace. After deletion, no alerts are generated for session configuration issues.
     /// </summary>
     public class AdminDeleteConfigurationAlertV1 : AccelByte.Sdk.Core.Operation
     {

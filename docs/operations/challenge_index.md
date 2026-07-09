@@ -31,6 +31,8 @@
 | `/challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/goals/{code}` | GET | AdminGetGoal | [AdminGetGoal](../../AccelByte.Sdk/Api/Challenge/Operation/GoalConfiguration/AdminGetGoal.cs) | [AdminGetGoal](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/GoalConfiguration/AdminGetGoal.cs) |
 | `/challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/goals/{code}` | PUT | AdminUpdateGoals | [AdminUpdateGoals](../../AccelByte.Sdk/Api/Challenge/Operation/GoalConfiguration/AdminUpdateGoals.cs) | [AdminUpdateGoals](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/GoalConfiguration/AdminUpdateGoals.cs) |
 | `/challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/goals/{code}` | DELETE | AdminDeleteGoal | [AdminDeleteGoal](../../AccelByte.Sdk/Api/Challenge/Operation/GoalConfiguration/AdminDeleteGoal.cs) | [AdminDeleteGoal](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/GoalConfiguration/AdminDeleteGoal.cs) |
+| `/challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/goals/{code}/slots` | PUT | AdminMoveGoalToSlot | [AdminMoveGoalToSlot](../../AccelByte.Sdk/Api/Challenge/Operation/GoalConfiguration/AdminMoveGoalToSlot.cs) | [AdminMoveGoalToSlot](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/GoalConfiguration/AdminMoveGoalToSlot.cs) |
+| `/challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/slots` | GET | AdminGetChallengeSlots | [AdminGetChallengeSlots](../../AccelByte.Sdk/Api/Challenge/Operation/GoalConfiguration/AdminGetChallengeSlots.cs) | [AdminGetChallengeSlots](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/GoalConfiguration/AdminGetChallengeSlots.cs) |
 
 ### Schedules Wrapper:  [Schedules](../../AccelByte.Sdk/Api/Challenge/Wrapper/Schedules.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -53,7 +55,7 @@
 |---|---|---|---|---|
 | `/challenge/v1/admin/namespaces/{namespace}/progress/evaluate` | POST | AdminEvaluateProgress | [AdminEvaluateProgress](../../AccelByte.Sdk/Api/Challenge/Operation/ChallengeProgression/AdminEvaluateProgress.cs) | [AdminEvaluateProgress](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/ChallengeProgression/AdminEvaluateProgress.cs) |
 | `/challenge/v1/admin/namespaces/{namespace}/users/{userId}/progress/{challengeCode}` | GET | AdminGetUserProgression | [AdminGetUserProgression](../../AccelByte.Sdk/Api/Challenge/Operation/ChallengeProgression/AdminGetUserProgression.cs) | [AdminGetUserProgression](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/ChallengeProgression/AdminGetUserProgression.cs) |
-| `/challenge/v1/public/namespaces/{namespace}/users/me/progress/evaluate` | POST | EvaluateMyProgress | [EvaluateMyProgress](../../AccelByte.Sdk/Api/Challenge/Operation/ChallengeProgression/EvaluateMyProgress.cs) | [EvaluateMyProgress](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/ChallengeProgression/EvaluateMyProgress.cs) |
+| `/challenge/v1/public/namespaces/{namespace}/users/me/progress/evaluate` | POST | PublicEvaluateMyProgress | [PublicEvaluateMyProgress](../../AccelByte.Sdk/Api/Challenge/Operation/ChallengeProgression/PublicEvaluateMyProgress.cs) | [PublicEvaluateMyProgress](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/ChallengeProgression/PublicEvaluateMyProgress.cs) |
 | `/challenge/v1/public/namespaces/{namespace}/users/me/progress/{challengeCode}` | GET | PublicGetUserProgression | [PublicGetUserProgression](../../AccelByte.Sdk/Api/Challenge/Operation/ChallengeProgression/PublicGetUserProgression.cs) | [PublicGetUserProgression](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/ChallengeProgression/PublicGetUserProgression.cs) |
 | `/challenge/v1/public/namespaces/{namespace}/users/me/progress/{challengeCode}/index/{index}` | GET | PublicGetPastUserProgression | [PublicGetPastUserProgression](../../AccelByte.Sdk/Api/Challenge/Operation/ChallengeProgression/PublicGetPastUserProgression.cs) | [PublicGetPastUserProgression](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/ChallengeProgression/PublicGetPastUserProgression.cs) |
 
@@ -71,7 +73,7 @@
 ### Challenge List Wrapper:  [ChallengeList](../../AccelByte.Sdk/Api/Challenge/Wrapper/ChallengeList.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/challenge/v1/public/namespaces/{namespace}/challenges` | GET | GetChallenges | [GetChallenges](../../AccelByte.Sdk/Api/Challenge/Operation/ChallengeList/GetChallenges.cs) | [GetChallenges](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/ChallengeList/GetChallenges.cs) |
+| `/challenge/v1/public/namespaces/{namespace}/challenges` | GET | PublicGetChallenges | [PublicGetChallenges](../../AccelByte.Sdk/Api/Challenge/Operation/ChallengeList/PublicGetChallenges.cs) | [PublicGetChallenges](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/ChallengeList/PublicGetChallenges.cs) |
 | `/challenge/v1/public/namespaces/{namespace}/challenges/{challengeCode}/goals` | GET | PublicGetScheduledGoals | [PublicGetScheduledGoals](../../AccelByte.Sdk/Api/Challenge/Operation/ChallengeList/PublicGetScheduledGoals.cs) | [PublicGetScheduledGoals](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/ChallengeList/PublicGetScheduledGoals.cs) |
 
 
@@ -122,6 +124,7 @@
 | `iam.Permission` | [IamPermission](../../AccelByte.Sdk/Api/Challenge/Model/IamPermission.cs) |
 | `model.ChallengeReference` | [ModelChallengeReference](../../AccelByte.Sdk/Api/Challenge/Model/ModelChallengeReference.cs) |
 | `model.ChallengeResponse` | [ModelChallengeResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelChallengeResponse.cs) |
+| `model.ChallengeSlotResponse` | [ModelChallengeSlotResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelChallengeSlotResponse.cs) |
 | `model.ClaimUserRewardsByGoalCodeRequest` | [ModelClaimUserRewardsByGoalCodeRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelClaimUserRewardsByGoalCodeRequest.cs) |
 | `model.ClaimUserRewardsReq` | [ModelClaimUserRewardsReq](../../AccelByte.Sdk/Api/Challenge/Model/ModelClaimUserRewardsReq.cs) |
 | `model.ClaimUsersRewardsRequest` | [ModelClaimUsersRewardsRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelClaimUsersRewardsRequest.cs) |
@@ -129,8 +132,10 @@
 | `model.ClaimableUserReward` | [ModelClaimableUserReward](../../AccelByte.Sdk/Api/Challenge/Model/ModelClaimableUserReward.cs) |
 | `model.CreateChallengeRequest` | [ModelCreateChallengeRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelCreateChallengeRequest.cs) |
 | `model.CreateGoalRequest` | [ModelCreateGoalRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelCreateGoalRequest.cs) |
+| `model.CurrentRoundSlotResponse` | [ModelCurrentRoundSlotResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelCurrentRoundSlotResponse.cs) |
 | `model.EvaluatePlayerProgressionRequest` | [ModelEvaluatePlayerProgressionRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelEvaluatePlayerProgressionRequest.cs) |
 | `model.GetGoalsResponse` | [ModelGetGoalsResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelGetGoalsResponse.cs) |
+| `model.GetSlotsResponse` | [ModelGetSlotsResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelGetSlotsResponse.cs) |
 | `model.GoalInSchedulesResponse` | [ModelGoalInSchedulesResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelGoalInSchedulesResponse.cs) |
 | `model.GoalMeta` | [ModelGoalMeta](../../AccelByte.Sdk/Api/Challenge/Model/ModelGoalMeta.cs) |
 | `model.GoalOrder` | [ModelGoalOrder](../../AccelByte.Sdk/Api/Challenge/Model/ModelGoalOrder.cs) |
@@ -145,6 +150,7 @@
 | `model.ListScheduleByGoalResponse` | [ModelListScheduleByGoalResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelListScheduleByGoalResponse.cs) |
 | `model.ListSchedulesResponse` | [ModelListSchedulesResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelListSchedulesResponse.cs) |
 | `model.ListUserRewardsResponse` | [ModelListUserRewardsResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelListUserRewardsResponse.cs) |
+| `model.MoveGoalToSlotRequest` | [ModelMoveGoalToSlotRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelMoveGoalToSlotRequest.cs) |
 | `model.Pagination` | [ModelPagination](../../AccelByte.Sdk/Api/Challenge/Model/ModelPagination.cs) |
 | `model.PluginAsignmentAppConfig` | [ModelPluginAsignmentAppConfig](../../AccelByte.Sdk/Api/Challenge/Model/ModelPluginAsignmentAppConfig.cs) |
 | `model.PluginAssignmentCustomConfig` | [ModelPluginAssignmentCustomConfig](../../AccelByte.Sdk/Api/Challenge/Model/ModelPluginAssignmentCustomConfig.cs) |
@@ -158,6 +164,7 @@
 | `model.Schedule` | [ModelSchedule](../../AccelByte.Sdk/Api/Challenge/Model/ModelSchedule.cs) |
 | `model.ScheduleByGoalResponse` | [ModelScheduleByGoalResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelScheduleByGoalResponse.cs) |
 | `model.ScheduleResponse` | [ModelScheduleResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelScheduleResponse.cs) |
+| `model.TemplateSlotResponse` | [ModelTemplateSlotResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelTemplateSlotResponse.cs) |
 | `model.UpdateChallengeRequest` | [ModelUpdateChallengeRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelUpdateChallengeRequest.cs) |
 | `model.UpdateChallengeScheduleRequest` | [ModelUpdateChallengeScheduleRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelUpdateChallengeScheduleRequest.cs) |
 | `model.UpdateGoalRequest` | [ModelUpdateGoalRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelUpdateGoalRequest.cs) |

@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteAppV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP [DELETE]`
-    /// 
     /// Delete App by given DeploymentID
     /// 
     /// This endpoint intended to delete ECR repo, ECR manifests, service images, uninstall helm-release,

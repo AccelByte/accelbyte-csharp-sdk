@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteAppV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP [DELETE]`
-    /// 
     /// Delete extend app by given {app} name
     /// 
     /// This endpoint will delete app information, configuration, deployments and all related manifest from

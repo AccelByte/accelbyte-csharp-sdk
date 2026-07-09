@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// deleteNotificationTemplateSlugV1Admin
     ///
-    /// Delete template slug in notification template
-    /// 
-    /// Action Code: 50206
+    /// Delete all localizations for the given notification template slug.
     /// </summary>
     public class DeleteNotificationTemplateSlugV1Admin : AccelByte.Sdk.Core.Operation
     {

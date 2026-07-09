@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminDeleteGlobalConfig
     ///
-    /// Delete of global configuration data.
+    /// Remove the global configuration record. This operation is permanent.
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminDeleteGlobalConfig : AccelByte.Sdk.Core.Operation

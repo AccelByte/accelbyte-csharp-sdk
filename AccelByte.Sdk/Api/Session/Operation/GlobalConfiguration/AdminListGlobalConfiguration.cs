@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminListGlobalConfiguration
     ///
-    /// Record of global configuration data.
+    /// Returns the current global configuration shared across all namespaces. Includes settings like maximum active sessions and cleanup intervals.
     /// </summary>
     public class AdminListGlobalConfiguration : AccelByte.Sdk.Core.Operation
     {

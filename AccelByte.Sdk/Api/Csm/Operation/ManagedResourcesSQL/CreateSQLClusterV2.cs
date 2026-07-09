@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// CreateSQLClusterV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:SQL:CLUSTERS [CREATE]`
-    /// 
     /// Provision SQL database cluster and instances that can be used by extend apps in game namespace within the studio.
     /// Only one SQL resource can be created for one studio/publisher namespace.
     /// 

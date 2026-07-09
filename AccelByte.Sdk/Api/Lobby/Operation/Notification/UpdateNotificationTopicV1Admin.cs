@@ -16,12 +16,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// updateNotificationTopicV1Admin
     ///
-    /// Update topic information by topic name.
-    /// 
-    /// topic should be alphabets, no special char except underscore, uppercase and no spacing. for example: TOPIC_TEST.
-    /// Already existing topic can not be created
-    /// 
-    /// Action Code: 50216
+    /// Update notification topic information by topic name.
+    /// Topic name must be uppercase alphabets and underscores only, no spaces or special characters (e.g. TOPIC_TEST).
     /// </summary>
     public class UpdateNotificationTopicV1Admin : AccelByte.Sdk.Core.Operation
     {

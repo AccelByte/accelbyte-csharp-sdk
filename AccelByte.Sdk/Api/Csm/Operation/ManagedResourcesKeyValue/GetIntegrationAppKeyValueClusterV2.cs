@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// GetIntegrationAppKeyValueClusterV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:KEYVALUE:INTEGRATE [READ]`
-    /// 
     /// Get integration of an extend app with a cluster.
     /// </summary>
     public class GetIntegrationAppKeyValueClusterV2 : AccelByte.Sdk.Core.Operation

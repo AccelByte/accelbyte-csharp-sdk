@@ -45,6 +45,9 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// 
     /// 
     ///   * cycleIds: Statistic cycle ids that will be tracked in the leaderboard. (required).
+    /// 
+    /// 
+    ///   * enableServerHiddenFilter: if true, the leaderboard will filter hidden users on server side. If false, the leaderboard will not filter hidden users. default is false. (optional).
     /// </summary>
     public class UpdateLeaderboardConfigurationAdminV3 : AccelByte.Sdk.Core.Operation
     {

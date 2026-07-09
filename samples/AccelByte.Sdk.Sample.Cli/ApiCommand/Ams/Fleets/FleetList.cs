@@ -37,6 +37,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
         [SdkCommandArgument("count")]
         public long? Count { get; set; }
 
+        [SdkCommandArgument("includeInactiveRegions")]
+        public bool? IncludeInactiveRegions { get; set; }
+
         [SdkCommandArgument("name")]
         public string? Name { get; set; }
 
@@ -67,6 +70,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
                 opBuilder.SetActive((bool)Active);
             if (Count != null)
                 opBuilder.SetCount((long)Count);
+            if (IncludeInactiveRegions != null)
+                opBuilder.SetIncludeInactiveRegions((bool)IncludeInactiveRegions);
             if (Name != null)
                 opBuilder.SetName((string)Name);
             if (Offset != null)

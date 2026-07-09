@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// GetDeploymentV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:DEPLOYMENT [READ]`
-    /// 
     /// Get Deployment information by given DeploymentID
     /// 
     /// This endpoint intended to get Deployment information.

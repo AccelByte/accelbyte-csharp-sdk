@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// publicPartyCancel
     ///
-    /// Cancel a party invitation.
+    /// Cancels a pending party invitation sent to the specified user. Only the party leader or the inviting member can cancel the invitation.
     /// </summary>
     public class PublicPartyCancel : AccelByte.Sdk.Core.Operation
     {

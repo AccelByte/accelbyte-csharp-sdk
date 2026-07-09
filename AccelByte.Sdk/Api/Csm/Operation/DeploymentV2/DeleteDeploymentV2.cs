@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteDeploymentV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:DEPLOYMENT [DELETE]`
-    /// 
     /// Delete Deployment information by given DeploymentID
     /// 
     /// This endpoint will delete release object for the service deployment in the cluster

@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// SaveSecretV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:SECRET [CREATE]`
-    /// 
     /// Save an environment secret.
     /// Secret will always be masked.
     /// Request body:

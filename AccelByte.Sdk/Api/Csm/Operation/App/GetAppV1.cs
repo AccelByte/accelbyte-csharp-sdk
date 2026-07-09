@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// GetAppV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP [READ]`
-    /// 
     /// Gets the App By Name
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

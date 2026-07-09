@@ -47,18 +47,6 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
         {
             get { return Operation.PublicGetUserAccountDeletionStatus.Builder.SetWrapperObject(this); }
         }
-        public PublicSubmitMyAccountDeletionRequest.PublicSubmitMyAccountDeletionRequestBuilder PublicSubmitMyAccountDeletionRequestOp
-        {
-            get { return Operation.PublicSubmitMyAccountDeletionRequest.Builder.SetWrapperObject(this); }
-        }
-        public PublicCancelMyAccountDeletionRequest.PublicCancelMyAccountDeletionRequestBuilder PublicCancelMyAccountDeletionRequestOp
-        {
-            get { return Operation.PublicCancelMyAccountDeletionRequest.Builder.SetWrapperObject(this); }
-        }
-        public PublicGetMyAccountDeletionStatus.PublicGetMyAccountDeletionStatusBuilder PublicGetMyAccountDeletionStatusOp
-        {
-            get { return Operation.PublicGetMyAccountDeletionStatus.Builder.SetWrapperObject(this); }
-        }
         #endregion
 
         public Model.ModelsListDeletionDataResponse? AdminGetListDeletionDataRequest(AdminGetListDeletionDataRequest input)
@@ -166,54 +154,6 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
                     response.Payload);
         }
         public async Task<Model.ModelsDeletionStatus?> PublicGetUserAccountDeletionStatusAsync(PublicGetUserAccountDeletionStatus input)
-        {
-            var response = await _sdk.RunRequestAsync(input);
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.ModelsRequestDeleteResponse? PublicSubmitMyAccountDeletionRequest(PublicSubmitMyAccountDeletionRequest input)
-        {
-            var response = _sdk.RunRequest(input);
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public async Task<Model.ModelsRequestDeleteResponse?> PublicSubmitMyAccountDeletionRequestAsync(PublicSubmitMyAccountDeletionRequest input)
-        {
-            var response = await _sdk.RunRequestAsync(input);
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void PublicCancelMyAccountDeletionRequest(PublicCancelMyAccountDeletionRequest input)
-        {
-            var response = _sdk.RunRequest(input);
-            input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public async Task PublicCancelMyAccountDeletionRequestAsync(PublicCancelMyAccountDeletionRequest input)
-        {
-            var response = await _sdk.RunRequestAsync(input);
-            input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.ModelsDeletionStatus? PublicGetMyAccountDeletionStatus(PublicGetMyAccountDeletionStatus input)
-        {
-            var response = _sdk.RunRequest(input);
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public async Task<Model.ModelsDeletionStatus?> PublicGetMyAccountDeletionStatusAsync(PublicGetMyAccountDeletionStatus input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

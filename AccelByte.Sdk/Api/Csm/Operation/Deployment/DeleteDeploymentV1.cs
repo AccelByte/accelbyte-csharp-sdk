@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteDeploymentV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:DEPLOYMENT [DELETE]`
-    /// 
     /// Delete Deployment information by given DeploymentID
     /// 
     /// This endpoint intended to delete helm release object and update the deleted_at in DB by given Deployment ID.

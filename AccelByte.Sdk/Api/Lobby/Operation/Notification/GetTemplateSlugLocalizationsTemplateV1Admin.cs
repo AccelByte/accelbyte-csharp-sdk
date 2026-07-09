@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// getTemplateSlugLocalizationsTemplateV1Admin
     ///
-    /// Get all templates in a namespace
-    /// 
-    /// Action Code: 50205
+    /// Get all localization variants for a given notification template slug.
     /// </summary>
     public class GetTemplateSlugLocalizationsTemplateV1Admin : AccelByte.Sdk.Core.Operation
     {

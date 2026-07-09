@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminGetListNativeSession
     ///
-    /// List of native sessions.
+    /// Returns paginated list of native platform sessions. Native sessions are synchronized with PSN, Xbox Live, and Steam platform session systems.
     /// </summary>
     public class AdminGetListNativeSession : AccelByte.Sdk.Core.Operation
     {

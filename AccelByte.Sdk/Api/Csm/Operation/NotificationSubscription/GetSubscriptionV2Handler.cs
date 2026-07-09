@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// GetSubscriptionV2Handler
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP:ALERT:SELF:SUBSCRIPTION [READ]`
-    /// 
     /// Get Subscription status of a user
     /// </summary>
     public class GetSubscriptionV2Handler : AccelByte.Sdk.Core.Operation

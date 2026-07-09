@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// publicGetParty
     ///
-    /// Get party details.
+    /// Returns party session details including members, configuration, and leader. The caller must be a party member or have admin access.
     /// </summary>
     public class PublicGetParty : AccelByte.Sdk.Core.Operation
     {

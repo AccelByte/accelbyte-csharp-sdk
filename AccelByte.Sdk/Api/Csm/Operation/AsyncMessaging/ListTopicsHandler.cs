@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// ListTopicsHandler
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:ASYNCMESSAGING:TOPICS [READ]`
-    /// 
     /// List all Async Messaging Topics inside a game namespace.
     /// </summary>
     public class ListTopicsHandler : AccelByte.Sdk.Core.Operation

@@ -2003,6 +2003,40 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --state <state value>
 ```
 
+### Operation PublicWebReauthPlatform
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn iam \
+    --op publicwebreauthplatform \
+    --namespace <namespace value> \
+    --platformId <platformId value> \
+    --clientId <clientId value - optional> \
+    --redirectUri <redirectUri value - optional> \
+    --operation <operation value>
+```
+
+### Operation PublicWebReauthPlatformEstablish
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn iam \
+    --op publicwebreauthplatformestablish \
+    --namespace <namespace value> \
+    --platformId <platformId value> \
+    --code <code value - optional> \
+    --state <state value>
+```
+
+### Operation PublicWebReauthPlatformProcess
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn iam \
+    --op publicwebreauthplatformprocess \
+    --namespace <namespace value> \
+    --platformId <platformId value> \
+    --code <code value - optional> \
+    --state <state value>
+```
+
 ### Operation PublicGetUsersPlatformInfosV3
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \

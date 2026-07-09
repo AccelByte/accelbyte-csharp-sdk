@@ -64,7 +64,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             );
 
 
-            AccelByte.Sdk.Api.Iam.Model.ModelLinkRequest? response = wrapper.PublicProcessWebLinkPlatformV3(operation);
+            AccelByte.Sdk.Api.Iam.Model.ModelReAuthRequest? response = wrapper.PublicProcessWebLinkPlatformV3(operation);
             if (response == null)
                 return "No response from server.";
 

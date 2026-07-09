@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteVariableV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:VARIABLE [DELETE]`
-    /// 
     /// Delete an environment variable.
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

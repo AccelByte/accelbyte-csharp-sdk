@@ -16,7 +16,10 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// PostMatchErrorMetric
     ///
-    /// Post metrics for external flow failure in a specific match pool
+    /// Post metrics for external flow failure in a specific match pool.
+    /// 
+    /// Records an external match error metric for the given match pool. Used to track failures
+    /// from custom (gRPC) match functions during the matchmaking process.
     /// </summary>
     public class PostMatchErrorMetric : AccelByte.Sdk.Core.Operation
     {

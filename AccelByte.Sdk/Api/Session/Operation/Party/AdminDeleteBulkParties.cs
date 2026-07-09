@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminDeleteBulkParties
     ///
-    /// Delete bulk parties.
+    /// Permanently deletes multiple party sessions by their IDs. Returns a summary of deleted and failed sessions.
     /// </summary>
     public class AdminDeleteBulkParties : AccelByte.Sdk.Core.Operation
     {

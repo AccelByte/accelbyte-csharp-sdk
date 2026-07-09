@@ -211,6 +211,39 @@ namespace AccelByte.Sdk.Core
         }
         private NotificationSubscriptionV3? _NotificationSubscriptionV3 = null;
 
+        public AppV4 AppV4
+        {
+            get
+            {
+                if (_AppV4 == null)
+                    _AppV4 = new AppV4(_SdkObject);
+                return _AppV4;
+            }
+        }
+        private AppV4? _AppV4 = null;
+
+        public AppStatusProgressV4 AppStatusProgressV4
+        {
+            get
+            {
+                if (_AppStatusProgressV4 == null)
+                    _AppStatusProgressV4 = new AppStatusProgressV4(_SdkObject);
+                return _AppStatusProgressV4;
+            }
+        }
+        private AppStatusProgressV4? _AppStatusProgressV4 = null;
+
+        public AppV5 AppV5
+        {
+            get
+            {
+                if (_AppV5 == null)
+                    _AppV5 = new AppV5(_SdkObject);
+                return _AppV5;
+            }
+        }
+        private AppV5? _AppV5 = null;
+
         internal CsmSdkWrappers(AccelByteSDK sdk)
         {
             _SdkObject = sdk;

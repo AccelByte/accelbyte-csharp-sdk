@@ -39,6 +39,14 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         {
             get { return Operation.AdminDeleteGoal.Builder.SetWrapperObject(this); }
         }
+        public AdminMoveGoalToSlot.AdminMoveGoalToSlotBuilder AdminMoveGoalToSlotOp
+        {
+            get { return Operation.AdminMoveGoalToSlot.Builder.SetWrapperObject(this); }
+        }
+        public AdminGetChallengeSlots.AdminGetChallengeSlotsBuilder AdminGetChallengeSlotsOp
+        {
+            get { return Operation.AdminGetChallengeSlots.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public Model.ModelGetGoalsResponse? AdminGetGoals(AdminGetGoals input)
@@ -117,6 +125,38 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminMoveGoalToSlot(AdminMoveGoalToSlot input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminMoveGoalToSlotAsync(AdminMoveGoalToSlot input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelGetSlotsResponse? AdminGetChallengeSlots(AdminGetChallengeSlots input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGetSlotsResponse?> AdminGetChallengeSlotsAsync(AdminGetChallengeSlots input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

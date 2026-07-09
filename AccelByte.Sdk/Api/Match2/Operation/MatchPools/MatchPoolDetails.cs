@@ -16,7 +16,8 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// MatchPoolDetails
     ///
-    /// Get details for a specific match pool
+    /// Get details for a specific match pool, including its configuration such as match function,
+    /// ticket expiration, ruleset, and backfill settings.
     /// </summary>
     public class MatchPoolDetails : AccelByte.Sdk.Core.Operation
     {

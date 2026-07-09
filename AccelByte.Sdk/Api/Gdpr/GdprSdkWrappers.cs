@@ -68,6 +68,28 @@ namespace AccelByte.Sdk.Core
         }
         private PlatformAccountClosureHistory? _PlatformAccountClosureHistory = null;
 
+        public DataDeletionHeadless DataDeletionHeadless
+        {
+            get
+            {
+                if (_DataDeletionHeadless == null)
+                    _DataDeletionHeadless = new DataDeletionHeadless(_SdkObject);
+                return _DataDeletionHeadless;
+            }
+        }
+        private DataDeletionHeadless? _DataDeletionHeadless = null;
+
+        public DataRetrievalHeadless DataRetrievalHeadless
+        {
+            get
+            {
+                if (_DataRetrievalHeadless == null)
+                    _DataRetrievalHeadless = new DataRetrievalHeadless(_SdkObject);
+                return _DataRetrievalHeadless;
+            }
+        }
+        private DataRetrievalHeadless? _DataRetrievalHeadless = null;
+
         public DataDeletionS2S DataDeletionS2S
         {
             get

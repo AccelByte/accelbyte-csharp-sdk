@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// StartAppV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP [UPDATE]`
-    /// 
     /// Starts the Application
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

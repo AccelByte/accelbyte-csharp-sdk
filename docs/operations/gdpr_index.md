@@ -14,9 +14,6 @@
 | `/gdpr/public/namespaces/{namespace}/users/{userId}/deletions` | POST | PublicSubmitUserAccountDeletionRequest | [PublicSubmitUserAccountDeletionRequest](../../AccelByte.Sdk/Api/Gdpr/Operation/DataDeletion/PublicSubmitUserAccountDeletionRequest.cs) | [PublicSubmitUserAccountDeletionRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataDeletion/PublicSubmitUserAccountDeletionRequest.cs) |
 | `/gdpr/public/namespaces/{namespace}/users/{userId}/deletions` | DELETE | PublicCancelUserAccountDeletionRequest | [PublicCancelUserAccountDeletionRequest](../../AccelByte.Sdk/Api/Gdpr/Operation/DataDeletion/PublicCancelUserAccountDeletionRequest.cs) | [PublicCancelUserAccountDeletionRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataDeletion/PublicCancelUserAccountDeletionRequest.cs) |
 | `/gdpr/public/namespaces/{namespace}/users/{userId}/deletions/status` | GET | PublicGetUserAccountDeletionStatus | [PublicGetUserAccountDeletionStatus](../../AccelByte.Sdk/Api/Gdpr/Operation/DataDeletion/PublicGetUserAccountDeletionStatus.cs) | [PublicGetUserAccountDeletionStatus](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataDeletion/PublicGetUserAccountDeletionStatus.cs) |
-| `/gdpr/public/users/me/deletions` | POST | PublicSubmitMyAccountDeletionRequest | [PublicSubmitMyAccountDeletionRequest](../../AccelByte.Sdk/Api/Gdpr/Operation/DataDeletion/PublicSubmitMyAccountDeletionRequest.cs) | [PublicSubmitMyAccountDeletionRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataDeletion/PublicSubmitMyAccountDeletionRequest.cs) |
-| `/gdpr/public/users/me/deletions` | DELETE | PublicCancelMyAccountDeletionRequest | [PublicCancelMyAccountDeletionRequest](../../AccelByte.Sdk/Api/Gdpr/Operation/DataDeletion/PublicCancelMyAccountDeletionRequest.cs) | [PublicCancelMyAccountDeletionRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataDeletion/PublicCancelMyAccountDeletionRequest.cs) |
-| `/gdpr/public/users/me/deletions/status` | GET | PublicGetMyAccountDeletionStatus | [PublicGetMyAccountDeletionStatus](../../AccelByte.Sdk/Api/Gdpr/Operation/DataDeletion/PublicGetMyAccountDeletionStatus.cs) | [PublicGetMyAccountDeletionStatus](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataDeletion/PublicGetMyAccountDeletionStatus.cs) |
 
 ### Configuration Wrapper:  [Configuration](../../AccelByte.Sdk/Api/Gdpr/Wrapper/Configuration.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -60,6 +57,23 @@
 |---|---|---|---|---|
 | `/gdpr/admin/namespaces/{namespace}/users/platforms/closure/histories` | GET | AdminGetUserPlatformAccountClosureHistories | [AdminGetUserPlatformAccountClosureHistories](../../AccelByte.Sdk/Api/Gdpr/Operation/PlatformAccountClosureHistory/AdminGetUserPlatformAccountClosureHistories.cs) | [AdminGetUserPlatformAccountClosureHistories](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/PlatformAccountClosureHistory/AdminGetUserPlatformAccountClosureHistories.cs) |
 
+### Data Deletion - Headless Wrapper:  [DataDeletionHeadless](../../AccelByte.Sdk/Api/Gdpr/Wrapper/DataDeletionHeadless.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/gdpr/public/users/me/deletions` | POST | PublicSubmitMyAccountDeletionRequest | [PublicSubmitMyAccountDeletionRequest](../../AccelByte.Sdk/Api/Gdpr/Operation/DataDeletionHeadless/PublicSubmitMyAccountDeletionRequest.cs) | [PublicSubmitMyAccountDeletionRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataDeletionHeadless/PublicSubmitMyAccountDeletionRequest.cs) |
+| `/gdpr/public/users/me/deletions` | DELETE | PublicCancelMyAccountDeletionRequest | [PublicCancelMyAccountDeletionRequest](../../AccelByte.Sdk/Api/Gdpr/Operation/DataDeletionHeadless/PublicCancelMyAccountDeletionRequest.cs) | [PublicCancelMyAccountDeletionRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataDeletionHeadless/PublicCancelMyAccountDeletionRequest.cs) |
+| `/gdpr/public/users/me/deletions/status` | GET | PublicGetMyAccountDeletionStatus | [PublicGetMyAccountDeletionStatus](../../AccelByte.Sdk/Api/Gdpr/Operation/DataDeletionHeadless/PublicGetMyAccountDeletionStatus.cs) | [PublicGetMyAccountDeletionStatus](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataDeletionHeadless/PublicGetMyAccountDeletionStatus.cs) |
+| `/gdpr/public/users/me/headless/deletions` | POST | PublicSubmitMyHeadlessDeletionRequest | [PublicSubmitMyHeadlessDeletionRequest](../../AccelByte.Sdk/Api/Gdpr/Operation/DataDeletionHeadless/PublicSubmitMyHeadlessDeletionRequest.cs) | [PublicSubmitMyHeadlessDeletionRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataDeletionHeadless/PublicSubmitMyHeadlessDeletionRequest.cs) |
+
+### Data Retrieval - Headless Wrapper:  [DataRetrievalHeadless](../../AccelByte.Sdk/Api/Gdpr/Wrapper/DataRetrievalHeadless.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/gdpr/public/users/me/headless/requests` | POST | PublicSubmitMyHeadlessPersonalDataRequest | [PublicSubmitMyHeadlessPersonalDataRequest](../../AccelByte.Sdk/Api/Gdpr/Operation/DataRetrievalHeadless/PublicSubmitMyHeadlessPersonalDataRequest.cs) | [PublicSubmitMyHeadlessPersonalDataRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataRetrievalHeadless/PublicSubmitMyHeadlessPersonalDataRequest.cs) |
+| `/gdpr/public/users/me/headless/requests/{requestDate}/generate` | POST | PublicGenerateMyHeadlessPersonalDataURL | [PublicGenerateMyHeadlessPersonalDataURL](../../AccelByte.Sdk/Api/Gdpr/Operation/DataRetrievalHeadless/PublicGenerateMyHeadlessPersonalDataURL.cs) | [PublicGenerateMyHeadlessPersonalDataURL](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataRetrievalHeadless/PublicGenerateMyHeadlessPersonalDataURL.cs) |
+| `/gdpr/public/users/me/requests` | GET | PublicGetMyPersonalDataRequests | [PublicGetMyPersonalDataRequests](../../AccelByte.Sdk/Api/Gdpr/Operation/DataRetrievalHeadless/PublicGetMyPersonalDataRequests.cs) | [PublicGetMyPersonalDataRequests](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataRetrievalHeadless/PublicGetMyPersonalDataRequests.cs) |
+| `/gdpr/public/users/me/requests` | POST | PublicSubmitMyPersonalDataRequest | [PublicSubmitMyPersonalDataRequest](../../AccelByte.Sdk/Api/Gdpr/Operation/DataRetrievalHeadless/PublicSubmitMyPersonalDataRequest.cs) | [PublicSubmitMyPersonalDataRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataRetrievalHeadless/PublicSubmitMyPersonalDataRequest.cs) |
+| `/gdpr/public/users/me/requests/{requestDate}` | DELETE | PublicCancelMyPersonalDataRequest | [PublicCancelMyPersonalDataRequest](../../AccelByte.Sdk/Api/Gdpr/Operation/DataRetrievalHeadless/PublicCancelMyPersonalDataRequest.cs) | [PublicCancelMyPersonalDataRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataRetrievalHeadless/PublicCancelMyPersonalDataRequest.cs) |
+
 ### Data Deletion (S2S) Wrapper:  [DataDeletionS2S](../../AccelByte.Sdk/Api/Gdpr/Wrapper/DataDeletionS2S.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -96,6 +110,14 @@
 |---|---|---|---|---|
 
 ### Platform Account Closure History Wrapper:  [PlatformAccountClosureHistory](../../AccelByte.Sdk/Api/Gdpr/Wrapper/PlatformAccountClosureHistory.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Data Deletion - Headless Wrapper:  [DataDeletionHeadless](../../AccelByte.Sdk/Api/Gdpr/Wrapper/DataDeletionHeadless.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Data Retrieval - Headless Wrapper:  [DataRetrievalHeadless](../../AccelByte.Sdk/Api/Gdpr/Wrapper/DataRetrievalHeadless.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 

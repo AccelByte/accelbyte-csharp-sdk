@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// GetAppListV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP [READ]`
-    /// 
     /// Gets the List of Apps for AB-Extend Customer
     /// 
     /// Available scenario:

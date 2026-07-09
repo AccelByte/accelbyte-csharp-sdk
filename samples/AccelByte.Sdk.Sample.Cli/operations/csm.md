@@ -88,17 +88,6 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value>
 ```
 
-### Operation CreateAppV2
-```sh
-$ AccelByte.Sdk.Sample.Cli.exe \
-    --sn csm \
-    --op createappv2 \
-    --app <app value> \
-    --namespace <namespace value> \
-    --reqbody <json string for request body>
-```
-To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
-
 ### Operation DeleteAppV2
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
@@ -771,8 +760,8 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --resourceId <resourceId value> \
     --studioName <studioName value> \
     --appName <appName value - optional> \
+    --gameNamespace <gameNamespace value - optional> \
     --limit <limit value - optional> \
-    --namespace_ <namespace_ value - optional> \
     --offset <offset value - optional>
 ```
 
@@ -796,4 +785,44 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --emailAddress <emailAddress value - optional> \
     --userId <userId value - optional>
 ```
+
+### Operation GetAppDebugInfoV4
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op getappdebuginfov4 \
+    --app <app value> \
+    --namespace <namespace value>
+```
+
+### Operation UpdateAppDebugModeV4
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op updateappdebugmodev4 \
+    --app <app value> \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation GetAppStatusProgressV4
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op getappstatusprogressv4 \
+    --app <app value> \
+    --namespace <namespace value>
+```
+
+### Operation CreateAppV5
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op createappv5 \
+    --app <app value> \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 

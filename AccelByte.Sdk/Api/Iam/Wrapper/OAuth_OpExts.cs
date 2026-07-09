@@ -64,30 +64,30 @@ namespace AccelByte.Sdk.Api
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.OauthmodelTokenResponse? Execute(
-            this PlatformTokenRequestHandler.PlatformTokenRequestHandlerBuilder builder,
+            this NamespaceScopedPlatformTokenGrant.NamespaceScopedPlatformTokenGrantBuilder builder,
             string namespace_,
             string platformId
         )
         {
-            PlatformTokenRequestHandler op = builder.Build(
+            NamespaceScopedPlatformTokenGrant op = builder.Build(
                 namespace_,
                 platformId
             );
 
-            return ((Iam.Wrapper.OAuth)builder.WrapperObject!).PlatformTokenRequestHandler(op);
+            return ((Iam.Wrapper.OAuth)builder.WrapperObject!).NamespaceScopedPlatformTokenGrant(op);
         }
         public static async Task<Iam.Model.OauthmodelTokenResponse?> ExecuteAsync(
-            this PlatformTokenRequestHandler.PlatformTokenRequestHandlerBuilder builder,
+            this NamespaceScopedPlatformTokenGrant.NamespaceScopedPlatformTokenGrantBuilder builder,
             string namespace_,
             string platformId
         )
         {
-            PlatformTokenRequestHandler op = builder.Build(
+            NamespaceScopedPlatformTokenGrant op = builder.Build(
                 namespace_,
                 platformId
             );
 
-            return await ((Iam.Wrapper.OAuth)builder.WrapperObject!).PlatformTokenRequestHandlerAsync(op);
+            return await ((Iam.Wrapper.OAuth)builder.WrapperObject!).NamespaceScopedPlatformTokenGrantAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(

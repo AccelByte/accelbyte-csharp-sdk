@@ -23,9 +23,9 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         {
             get { return Operation.PortalHealthCheck.Builder.SetWrapperObject(this); }
         }
-        public Func1.Func1Builder Func1Op
+        public VersionInfo.VersionInfoBuilder VersionInfoOp
         {
-            get { return Operation.Func1.Builder.SetWrapperObject(this); }
+            get { return Operation.VersionInfo.Builder.SetWrapperObject(this); }
         }
         public BasicHealthCheck.BasicHealthCheckBuilder BasicHealthCheckOp
         {
@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void Func1(Func1 input)
+        public void VersionInfo(VersionInfo input)
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
@@ -57,7 +57,7 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task Func1Async(Func1 input)
+        public async Task VersionInfoAsync(VersionInfo input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(

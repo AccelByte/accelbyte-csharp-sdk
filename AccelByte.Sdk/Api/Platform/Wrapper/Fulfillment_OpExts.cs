@@ -14,22 +14,26 @@ namespace AccelByte.Sdk.Api
     {
         public static Platform.Model.FulfillmentHistoryPagingSlicedResult? Execute(
             this QueryFulfillmentHistories.QueryFulfillmentHistoriesBuilder builder,
-            string namespace_
+            string namespace_,
+            string userId
         )
         {
             QueryFulfillmentHistories op = builder.Build(
-                namespace_
+                namespace_,
+                userId
             );
 
             return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).QueryFulfillmentHistories(op);
         }
         public static async Task<Platform.Model.FulfillmentHistoryPagingSlicedResult?> ExecuteAsync(
             this QueryFulfillmentHistories.QueryFulfillmentHistoriesBuilder builder,
-            string namespace_
+            string namespace_,
+            string userId
         )
         {
             QueryFulfillmentHistories op = builder.Build(
-                namespace_
+                namespace_,
+                userId
             );
 
             return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).QueryFulfillmentHistoriesAsync(op);

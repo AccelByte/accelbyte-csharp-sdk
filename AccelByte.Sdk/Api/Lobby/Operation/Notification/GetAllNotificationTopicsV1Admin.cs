@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// getAllNotificationTopicsV1Admin
     ///
-    /// Get topic by namespace.
-    /// 
-    /// Action Code: 50213
+    /// Get all notification topics in a namespace.
     /// </summary>
     public class GetAllNotificationTopicsV1Admin : AccelByte.Sdk.Core.Operation
     {

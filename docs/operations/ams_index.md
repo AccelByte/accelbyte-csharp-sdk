@@ -13,7 +13,7 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/ams/healthz` | GET | PortalHealthCheck | [PortalHealthCheck](../../AccelByte.Sdk/Api/Ams/Operation/FleetCommander/PortalHealthCheck.cs) | [PortalHealthCheck](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/FleetCommander/PortalHealthCheck.cs) |
-| `/ams/version` | GET | Func1 | [Func1](../../AccelByte.Sdk/Api/Ams/Operation/FleetCommander/Func1.cs) | [Func1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/FleetCommander/Func1.cs) |
+| `/ams/version` | GET | VersionInfo | [VersionInfo](../../AccelByte.Sdk/Api/Ams/Operation/FleetCommander/VersionInfo.cs) | [VersionInfo](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/FleetCommander/VersionInfo.cs) |
 | `/healthz` | GET | BasicHealthCheck | [BasicHealthCheck](../../AccelByte.Sdk/Api/Ams/Operation/FleetCommander/BasicHealthCheck.cs) | [BasicHealthCheck](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/FleetCommander/BasicHealthCheck.cs) |
 
 ### Account Wrapper:  [Account](../../AccelByte.Sdk/Api/Ams/Wrapper/Account.cs)

@@ -16,23 +16,21 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// GetSQLDatabaseV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:SQL:DATABASES [READ]`
-    /// 
     /// Get a SQL database information returns the SQL database related information by given game namespace
     /// and app name.
     /// 
     /// `resourceStatus` field - indicates the SQL cluster status:
-    /// - `starting` : The cluster is transitioning from stopped to running, or is rebooting.
-    /// - `available` : The cluster is accessible.
     /// - `updating` : The cluster is being modified and is not yet accessible (e.g., updating min/max ACU).
-    /// - `creating` : The cluster or instance is being created and is not yet accessible.
-    /// - `maintenance` : The cluster is undergoing maintenance operations and is not accessible.
-    /// - `unknown` : The cluster status is not recognized
-    /// - `configuring-replica` : The cluster is configuring replica instances for multi-AZ deployment.
-    /// - `deleting` : The cluster is in the process of being deleted and is not accessible.
     /// - `failed` : The cluster failed to provision or is in an error state and not accessible.
     /// - `stopping` : The cluster is in the process of stopping and will soon become inaccessible.
     /// - `stopped` : The cluster is stopped and not accessible.
+    /// - `starting` : The cluster is transitioning from stopped to running, or is rebooting.
+    /// - `creating` : The cluster or instance is being created and is not yet accessible.
+    /// - `deleting` : The cluster is in the process of being deleted and is not accessible.
+    /// - `maintenance` : The cluster is undergoing maintenance operations and is not accessible.
+    /// - `unknown` : The cluster status is not recognized
+    /// - `configuring-replica` : The cluster is configuring replica instances for multi-AZ deployment.
+    /// - `available` : The cluster is accessible.
     /// </summary>
     public class GetSQLDatabaseV2 : AccelByte.Sdk.Core.Operation
     {

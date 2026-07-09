@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// GetAppReleaseV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP [READ]`
-    /// 
     /// Gets the Latest Release Version info of this App
     /// </summary>
     public class GetAppReleaseV1 : AccelByte.Sdk.Core.Operation

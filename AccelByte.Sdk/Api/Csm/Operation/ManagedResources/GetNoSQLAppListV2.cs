@@ -16,18 +16,16 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// GetNoSQLAppListV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:NOSQL:CLUSTERS [READ]`
-    /// 
     /// Get List of Extend App using NoSQL database by given studio/publisher namespace and the NoSQL cluster resourceId.
     /// - `starting` : The cluster is transitioning from stopped to running, or is rebooting.
     /// - `unknown` : The cluster status is not recognized
     /// - `available` : The cluster is accessible.
-    /// - `creating` : The cluster or instance is being created and is not yet accessible.
-    /// - `failed` : The cluster failed to provision or is in an error state and not accessible.
-    /// - `stopping` : The cluster is in the process of stopping and will soon become inaccessible.
     /// - `maintenance` : The cluster is undergoing maintenance operations and is not accessible.
     /// - `updating` : The cluster is being modified and is not yet accessible (e.g., updating min/max DCU).
+    /// - `creating` : The cluster or instance is being created and is not yet accessible.
     /// - `deleting` : The cluster is in the process of being deleted and is not accessible.
+    /// - `failed` : The cluster failed to provision or is in an error state and not accessible.
+    /// - `stopping` : The cluster is in the process of stopping and will soon become inaccessible.
     /// - `stopped` : The cluster is stopped and not accessible.
     /// </summary>
     public class GetNoSQLAppListV2 : AccelByte.Sdk.Core.Operation
@@ -41,9 +39,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
 
             public string? AppName { get; set; }
 
-            public long? Limit { get; set; }
+            public string? GameNamespace { get; set; }
 
-            public string? Namespace { get; set; }
+            public long? Limit { get; set; }
 
             public long? Offset { get; set; }
 
@@ -60,15 +58,15 @@ namespace AccelByte.Sdk.Api.Csm.Operation
                 return this;
             }
 
-            public GetNoSQLAppListV2Builder SetLimit(long _limit)
+            public GetNoSQLAppListV2Builder SetGameNamespace(string _gameNamespace)
             {
-                Limit = _limit;
+                GameNamespace = _gameNamespace;
                 return this;
             }
 
-            public GetNoSQLAppListV2Builder SetNamespace(string _namespace_)
+            public GetNoSQLAppListV2Builder SetLimit(long _limit)
             {
-                Namespace = _namespace_;
+                Limit = _limit;
                 return this;
             }
 
@@ -109,8 +107,8 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             PathParams["studioName"] = studioName;
 
             if (builder.AppName is not null) QueryParams["appName"] = builder.AppName;
+            if (builder.GameNamespace is not null) QueryParams["gameNamespace"] = builder.GameNamespace;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
-            if (builder.Namespace is not null) QueryParams["namespace"] = builder.Namespace;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
 
 
@@ -126,8 +124,8 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             string resourceId,
             string studioName,
             string? appName,
+            string? gameNamespace,
             long? limit,
-            string? namespace_,
             long? offset
         )
         {
@@ -135,8 +133,8 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             PathParams["studioName"] = studioName;
 
             if (appName is not null) QueryParams["appName"] = appName;
+            if (gameNamespace is not null) QueryParams["gameNamespace"] = gameNamespace;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
-            if (namespace_ is not null) QueryParams["namespace"] = namespace_;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
 
 

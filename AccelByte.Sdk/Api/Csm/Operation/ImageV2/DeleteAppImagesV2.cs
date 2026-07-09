@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteAppImagesV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:IMAGE [DELETE]`
-    /// 
     /// Deletes list of provided image tags from the app image repository
     /// </summary>
     public class DeleteAppImagesV2 : AccelByte.Sdk.Core.Operation

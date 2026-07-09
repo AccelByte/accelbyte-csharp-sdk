@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminSyncNativeSession
     ///
-    /// Trigger user's active party session to native platform.
+    /// Triggers synchronization of the user's active party session to the native platform (PSN, Xbox). Useful when native session state is out of sync with the AccelByte session state.
     /// </summary>
     public class AdminSyncNativeSession : AccelByte.Sdk.Core.Operation
     {

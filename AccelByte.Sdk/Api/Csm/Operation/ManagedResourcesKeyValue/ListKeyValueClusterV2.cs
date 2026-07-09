@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// ListKeyValueClusterV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:KEYVALUE:CLUSTERS [READ]`
-    /// 
     /// List Key-Value clusters by studio/publisher namespace.
     /// If `refresh=true`, the service will sync cluster status from the provider (cached).
     /// </summary>

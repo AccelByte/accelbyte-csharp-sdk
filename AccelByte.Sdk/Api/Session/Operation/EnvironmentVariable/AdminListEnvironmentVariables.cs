@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminListEnvironmentVariables
     ///
-    /// List of environment variables.
+    /// Returns all environment variables currently set for the session service. Useful for debugging configuration and verifying runtime settings.
     /// </summary>
     public class AdminListEnvironmentVariables : AccelByte.Sdk.Core.Operation
     {

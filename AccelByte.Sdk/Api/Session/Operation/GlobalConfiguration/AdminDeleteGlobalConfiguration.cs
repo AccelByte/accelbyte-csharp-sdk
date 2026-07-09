@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminDeleteGlobalConfiguration
     ///
-    /// Delete of global configuration data.
+    /// Deletes the global configuration. After deletion, the service falls back to default configuration values.
     /// </summary>
     public class AdminDeleteGlobalConfiguration : AccelByte.Sdk.Core.Operation
     {

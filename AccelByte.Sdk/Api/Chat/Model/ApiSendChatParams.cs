@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Chat.Model
         [JsonPropertyName("message")]
         public string? Message { get; set; }
 
+        [JsonPropertyName("metadata")]
+        public string? Metadata { get; set; }
+
     }
 
 

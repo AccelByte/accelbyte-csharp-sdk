@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("includeInactiveRegions")]
+        public bool? IncludeInactiveRegions { get; set; }
+
         public FleetGetCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,6 +48,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 
             var opBuilder = AccelByte.Sdk.Api.Ams.Operation.FleetGet.Builder;
 
+            if (IncludeInactiveRegions != null)
+                opBuilder.SetIncludeInactiveRegions((bool)IncludeInactiveRegions);
 
 
 
