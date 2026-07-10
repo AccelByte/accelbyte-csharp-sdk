@@ -255,7 +255,7 @@ eval_tap $? 21 'AdminSubmitReport' test.out
 
 #- 22 CreateModerationRule
 # body param: body
-echo '{"action": "HideContent", "actions": {"banAccount": {"comment": "wosJGnUyCMEbHh1u", "duration": 63, "reason": "0yJJ0uCjjaNCRV3h", "skipNotif": true, "type": "IiTEoTCSxjAqg9oG"}, "deleteChat": true, "extensionActionIds": ["24DKGwgZ85vyFJR8", "euQBLVu27iwplLJd", "zYS9K0VvwE6MAqPc"], "hideContent": false}, "active": true, "category": "UGC", "extensionCategory": "wxyqQQIXVmrtRlq1", "reason": "jv60HTnmFrl3gYx6", "threshold": 25}' > $TEMP_JSON_INPUT
+echo '{"action": "HideContent", "actions": {"autoResolve": true, "banAccount": {"comment": "CQwMBcQUNPHN8YZT", "duration": 49, "reason": "DmJ4Suj6DjUw36Gt", "skipNotif": false, "type": "83Jp2f9f1FCoIo3L"}, "deleteChat": false, "extensionActionIds": ["4DKGwgZ85vyFJR8e", "uQBLVu27iwplLJdz", "YS9K0VvwE6MAqPc8"], "hideContent": false}, "active": true, "category": "UGC", "extensionCategory": "wxyqQQIXVmrtRlq1", "reason": "jv60HTnmFrl3gYx6", "threshold": 25}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn reporting \
     --op CreateModerationRule \
@@ -266,7 +266,7 @@ eval_tap $? 22 'CreateModerationRule' test.out
 
 #- 23 UpdateModerationRule
 # body param: body
-echo '{"action": "HideContent", "actions": {"banAccount": {"comment": "Nu3ERxV0UTaiSzfi", "duration": 25, "reason": "FnBERe8qNYRTYSaZ", "skipNotif": true, "type": "u7rNRVdygfKmUkzj"}, "deleteChat": false, "extensionActionIds": ["SD1pZGMfPdGIOAZ8", "6un0L98WUoXvfU4q", "MIpfgxw2ff5twRYb"], "hideContent": true}, "active": false, "category": "UGC", "extensionCategory": "2r4wWs6IpYBxafo9", "reason": "b4xJyNnvHKrm8UuN", "threshold": 23}' > $TEMP_JSON_INPUT
+echo '{"action": "HideContent", "actions": {"autoResolve": true, "banAccount": {"comment": "u3ERxV0UTaiSzfi0", "duration": 64, "reason": "WZjTYM95e4aa8xOJ", "skipNotif": true, "type": "4NqSNylcljuNM3eU"}, "deleteChat": false, "extensionActionIds": ["SD1pZGMfPdGIOAZ8", "6un0L98WUoXvfU4q", "MIpfgxw2ff5twRYb"], "hideContent": true}, "active": false, "category": "UGC", "extensionCategory": "2r4wWs6IpYBxafo9", "reason": "b4xJyNnvHKrm8UuN", "threshold": 23}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn reporting \
     --op UpdateModerationRule \

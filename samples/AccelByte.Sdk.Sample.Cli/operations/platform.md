@@ -661,7 +661,7 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --limit <limit value - optional> \
     --offset <offset value - optional> \
     --status <status value - optional> \
-    --userId <userId value - optional>
+    --userId <userId value>
 ```
 
 ### Operation QueryIAPClawbackHistory

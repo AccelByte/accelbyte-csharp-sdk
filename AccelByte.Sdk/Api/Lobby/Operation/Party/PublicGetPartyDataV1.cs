@@ -16,12 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// publicGetPartyDataV1
     ///
-    /// Required valid user authorization
-    /// 
-    /// 
-    /// load personal party data in a namespace based on Party ID
-    /// 
-    /// Action Code: 50101
+    /// Load party data in a namespace by Party ID.
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicGetPartyDataV1 : AccelByte.Sdk.Core.Operation

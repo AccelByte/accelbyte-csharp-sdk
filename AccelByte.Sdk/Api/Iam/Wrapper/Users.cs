@@ -712,6 +712,18 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.PublicProcessWebLinkPlatformV3.Builder.SetWrapperObject(this); }
         }
+        public PublicWebReauthPlatform.PublicWebReauthPlatformBuilder PublicWebReauthPlatformOp
+        {
+            get { return Operation.PublicWebReauthPlatform.Builder.SetWrapperObject(this); }
+        }
+        public PublicWebReauthPlatformEstablish.PublicWebReauthPlatformEstablishBuilder PublicWebReauthPlatformEstablishOp
+        {
+            get { return Operation.PublicWebReauthPlatformEstablish.Builder.SetWrapperObject(this); }
+        }
+        public PublicWebReauthPlatformProcess.PublicWebReauthPlatformProcessBuilder PublicWebReauthPlatformProcessOp
+        {
+            get { return Operation.PublicWebReauthPlatformProcess.Builder.SetWrapperObject(this); }
+        }
         public PublicGetUsersPlatformInfosV3.PublicGetUsersPlatformInfosV3Builder PublicGetUsersPlatformInfosV3Op
         {
             get { return Operation.PublicGetUsersPlatformInfosV3.Builder.SetWrapperObject(this); }
@@ -3103,7 +3115,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
 #pragma warning restore ab_deprecated_operation
-        public Model.ModelLinkRequest? PublicGetAsyncStatus(PublicGetAsyncStatus input)
+        public Model.ModelReAuthRequest? PublicGetAsyncStatus(PublicGetAsyncStatus input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -3111,7 +3123,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.ModelLinkRequest?> PublicGetAsyncStatusAsync(PublicGetAsyncStatus input)
+        public async Task<Model.ModelReAuthRequest?> PublicGetAsyncStatusAsync(PublicGetAsyncStatus input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
@@ -3120,7 +3132,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
 
-        public Model.ModelLinkRequest<T1>? PublicGetAsyncStatus<T1>(PublicGetAsyncStatus input)
+        public Model.ModelReAuthRequest<T1>? PublicGetAsyncStatus<T1>(PublicGetAsyncStatus input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -3129,7 +3141,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.ModelLinkRequest<T1>?> PublicGetAsyncStatusAsync<T1>(PublicGetAsyncStatus input)
+        public async Task<Model.ModelReAuthRequest<T1>?> PublicGetAsyncStatusAsync<T1>(PublicGetAsyncStatus input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse<T1>(
@@ -3527,7 +3539,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelLinkRequest? PublicProcessWebLinkPlatformV3(PublicProcessWebLinkPlatformV3 input)
+        public Model.ModelReAuthRequest? PublicProcessWebLinkPlatformV3(PublicProcessWebLinkPlatformV3 input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -3535,7 +3547,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.ModelLinkRequest?> PublicProcessWebLinkPlatformV3Async(PublicProcessWebLinkPlatformV3 input)
+        public async Task<Model.ModelReAuthRequest?> PublicProcessWebLinkPlatformV3Async(PublicProcessWebLinkPlatformV3 input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
@@ -3544,7 +3556,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
 
-        public Model.ModelLinkRequest<T1>? PublicProcessWebLinkPlatformV3<T1>(PublicProcessWebLinkPlatformV3 input)
+        public Model.ModelReAuthRequest<T1>? PublicProcessWebLinkPlatformV3<T1>(PublicProcessWebLinkPlatformV3 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -3553,10 +3565,58 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.ModelLinkRequest<T1>?> PublicProcessWebLinkPlatformV3Async<T1>(PublicProcessWebLinkPlatformV3 input)
+        public async Task<Model.ModelReAuthRequest<T1>?> PublicProcessWebLinkPlatformV3Async<T1>(PublicProcessWebLinkPlatformV3 input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelWebLinkingResponse? PublicWebReauthPlatform(PublicWebReauthPlatform input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelWebLinkingResponse?> PublicWebReauthPlatformAsync(PublicWebReauthPlatform input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public string PublicWebReauthPlatformEstablish(PublicWebReauthPlatformEstablish input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<string> PublicWebReauthPlatformEstablishAsync(PublicWebReauthPlatformEstablish input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelWebReauthProcessResponse? PublicWebReauthPlatformProcess(PublicWebReauthPlatformProcess input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelWebReauthProcessResponse?> PublicWebReauthPlatformProcessAsync(PublicWebReauthPlatformProcess input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

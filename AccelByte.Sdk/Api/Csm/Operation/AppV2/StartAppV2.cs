@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// StartAppV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP [UPDATE]`
-    /// 
     /// Starts the Application
     /// </summary>
     public class StartAppV2 : AccelByte.Sdk.Core.Operation

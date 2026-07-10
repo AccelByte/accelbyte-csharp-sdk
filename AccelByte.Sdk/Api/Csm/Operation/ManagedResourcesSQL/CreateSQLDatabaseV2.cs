@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// CreateSQLDatabaseV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:SQL:DATABASES [CREATE]`
-    /// 
     /// Creates a SQL database along with its credentials associated with given extend app. The database will be created in the provisioned SQL cluster.
     /// </summary>
     public class CreateSQLDatabaseV2 : AccelByte.Sdk.Core.Operation

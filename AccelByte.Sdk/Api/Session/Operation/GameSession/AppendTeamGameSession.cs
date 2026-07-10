@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// appendTeamGameSession
     ///
-    /// Append new member or team to session. Please use patchUpdateGameSession instead
+    /// **Deprecated.** Appends new members or teams to a game session. Use PATCH updateGameSession instead, which supports partial updates and is more efficient.
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AppendTeamGameSession : AccelByte.Sdk.Core.Operation

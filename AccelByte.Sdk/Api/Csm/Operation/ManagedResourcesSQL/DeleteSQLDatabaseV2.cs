@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteSQLDatabaseV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:SQL:DATABASES [DELETE]`
-    /// 
     /// Deletes a SQL database and its credentials associated with given extend app and game namespace. The database will be removed from the provisioned SQL cluster.
     /// </summary>
     public class DeleteSQLDatabaseV2 : AccelByte.Sdk.Core.Operation

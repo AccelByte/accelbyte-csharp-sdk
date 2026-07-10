@@ -25,6 +25,10 @@ namespace AccelByte.Sdk.Api.Csm.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? ReplicaLimit { get; set; }
 
+        [JsonPropertyName("rolloutReadyReplicas")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? RolloutReadyReplicas { get; set; }
+
     }
 
 

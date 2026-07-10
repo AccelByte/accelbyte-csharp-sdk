@@ -1303,8 +1303,10 @@ ApimodelsGameSessionResponse? newGSResponse = sdk.Session.GameSession.CreateGame
 ### Join a game session
 
 ```csharp
+ApimodelsJoinSessionRequest joinRequest = new ApimodelsJoinSessionRequest();
+
 ApimodelsGameSessionResponse? p2GsJoin = sdk.Session.GameSession.JoinGameSessionOp
-    .Execute(sdk.Namespace, gameSessionId);
+    .Execute(joinRequest, sdk.Namespace, gameSessionId);
 ```
 
 ### Leave a game session

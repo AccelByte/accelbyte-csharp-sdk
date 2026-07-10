@@ -17,11 +17,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// createNotificationTopicV1Admin
     ///
     /// Create new notification topic.
-    /// 
-    /// topic should be alphabets, no special char except underscore, uppercase and no spacing. for example: TOPIC_TEST.
-    /// Already existing topic can not be created
-    /// 
-    /// Action Code: 50214
+    /// Topic name must be uppercase alphabets and underscores only, no spaces or special characters (e.g. TOPIC_TEST).
+    /// Already existing topics cannot be created again.
     /// </summary>
     public class CreateNotificationTopicV1Admin : AccelByte.Sdk.Core.Operation
     {

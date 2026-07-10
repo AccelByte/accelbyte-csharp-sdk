@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// StopAppV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP [UPDATE]`
-    /// 
     /// Stops the Application
     /// </summary>
     public class StopAppV2 : AccelByte.Sdk.Core.Operation

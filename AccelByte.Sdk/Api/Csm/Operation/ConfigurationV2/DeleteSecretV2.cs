@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteSecretV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:SECRET [DELETE]`
-    /// 
     /// Delete an environment secret by its config id
     /// </summary>
     public class DeleteSecretV2 : AccelByte.Sdk.Core.Operation

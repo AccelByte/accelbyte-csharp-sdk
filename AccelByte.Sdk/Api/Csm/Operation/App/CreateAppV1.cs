@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// CreateAppV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP [CREATE]`
-    /// 
     /// Creates new App for AB-Extend Customers
     /// 
     /// Available scenario:

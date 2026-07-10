@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminDeleteBulkGameSessions
     ///
-    /// Delete bulk game sessions.
+    /// Permanently deletes multiple game sessions by their IDs. Returns a summary of deleted and failed sessions. Any allocated dedicated servers are released.
     /// </summary>
     public class AdminDeleteBulkGameSessions : AccelByte.Sdk.Core.Operation
     {

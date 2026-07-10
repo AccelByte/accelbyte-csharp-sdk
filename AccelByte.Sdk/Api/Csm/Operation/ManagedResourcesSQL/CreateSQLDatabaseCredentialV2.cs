@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// CreateSQLDatabaseCredentialV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:SQL:DATABASECREDENTIALS [CREATE]`
-    /// 
     /// Creates a new database credential for the customer. This will soft-delete the old credential and create a new one.
     /// </summary>
     public class CreateSQLDatabaseCredentialV2 : AccelByte.Sdk.Core.Operation

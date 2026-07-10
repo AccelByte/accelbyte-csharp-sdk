@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// IntegrateAppKeyValueClusterV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:KEYVALUE:INTEGRATE [CREATE]`
-    /// 
     /// Integrate an Extend App with an existing KeyValue cluster. Injects REDIS_HOST, REDIS_PORT, REDIS_USERNAME, REDIS_PASSWORD to the app config.
     /// </summary>
     public class IntegrateAppKeyValueClusterV2 : AccelByte.Sdk.Core.Operation

@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// StartSQLClusterV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:SQL:CLUSTERS [UPDATE]`
-    /// 
     /// Start SQL cluster.
     /// You can only start the cluster when its status is "stopped".
     /// 

@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// SaveVariableV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:VARIABLE [CREATE]`
-    /// 
     /// Save an environment variable.
     /// Request body:
     /// - configName : environment variable name - Required.

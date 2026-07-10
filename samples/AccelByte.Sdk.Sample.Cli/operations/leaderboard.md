@@ -467,6 +467,7 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --op getalltimeleaderboardrankingadminv3 \
     --leaderboardCode <leaderboardCode value> \
     --namespace <namespace value> \
+    --includeHiddenUsers <includeHiddenUsers value - optional> \
     --limit <limit value - optional> \
     --offset <offset value - optional>
 ```
@@ -479,6 +480,7 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --cycleId <cycleId value> \
     --leaderboardCode <leaderboardCode value> \
     --namespace <namespace value> \
+    --includeHiddenUsers <includeHiddenUsers value - optional> \
     --limit <limit value - optional> \
     --offset <offset value - optional> \
     --previousVersion <previousVersion value - optional>

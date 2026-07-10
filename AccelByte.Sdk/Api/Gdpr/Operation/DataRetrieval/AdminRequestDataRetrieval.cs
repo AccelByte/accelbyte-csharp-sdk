@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// AdminRequestDataRetrieval
     ///
-    /// Submit user personal data retrieval request.
+    /// Submit user's personal data request.
     /// Scope: account
     /// 
     /// ### Request Header:

@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// GetAppImageListV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:IMAGE [READ]`
-    /// 
     /// Get a list of container images
     /// 
     /// Default 'cached' parameter is 'true'

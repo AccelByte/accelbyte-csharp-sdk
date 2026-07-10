@@ -61,6 +61,9 @@ namespace AccelByte.Sdk.Api.Csm.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
+        [JsonPropertyName("enableDebugMode")]
+        public bool? EnableDebugMode { get; set; }
+
         [JsonPropertyName("gameName")]
         public string? GameName { get; set; }
 
@@ -74,10 +77,6 @@ namespace AccelByte.Sdk.Api.Csm.Model
         [JsonPropertyName("message")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Message { get; set; }
-
-        [JsonPropertyName("redeploymentInfo")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public ModelAppRedeploymentInfo? RedeploymentInfo { get; set; }
 
         [JsonPropertyName("replica")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

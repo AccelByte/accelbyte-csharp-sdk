@@ -223,6 +223,9 @@
 | `/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link` | GET | PublicWebLinkPlatform | [PublicWebLinkPlatform](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicWebLinkPlatform.cs) | [PublicWebLinkPlatform](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicWebLinkPlatform.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/establish` | GET | PublicWebLinkPlatformEstablish | [PublicWebLinkPlatformEstablish](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicWebLinkPlatformEstablish.cs) | [PublicWebLinkPlatformEstablish](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicWebLinkPlatformEstablish.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/process` | POST | PublicProcessWebLinkPlatformV3 | [PublicProcessWebLinkPlatformV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicProcessWebLinkPlatformV3.cs) | [PublicProcessWebLinkPlatformV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicProcessWebLinkPlatformV3.cs) |
+| `/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/reauth` | GET | PublicWebReauthPlatform | [PublicWebReauthPlatform](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicWebReauthPlatform.cs) | [PublicWebReauthPlatform](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicWebReauthPlatform.cs) |
+| `/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/reauth/establish` | GET | PublicWebReauthPlatformEstablish | [PublicWebReauthPlatformEstablish](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicWebReauthPlatformEstablish.cs) | [PublicWebReauthPlatformEstablish](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicWebReauthPlatformEstablish.cs) |
+| `/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/reauth/process` | POST | PublicWebReauthPlatformProcess | [PublicWebReauthPlatformProcess](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicWebReauthPlatformProcess.cs) | [PublicWebReauthPlatformProcess](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicWebReauthPlatformProcess.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/platforms` | POST | PublicGetUsersPlatformInfosV3 | [PublicGetUsersPlatformInfosV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetUsersPlatformInfosV3.cs) | [PublicGetUsersPlatformInfosV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetUsersPlatformInfosV3.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/reset` | POST | ResetPasswordV3 | [ResetPasswordV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/ResetPasswordV3.cs) | [ResetPasswordV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/ResetPasswordV3.cs) |
 | [DEPRECATED] `/iam/v3/public/namespaces/{namespace}/users/{userId}` | GET | PublicGetUserByUserIdV3 | [PublicGetUserByUserIdV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetUserByUserIdV3.cs) | [PublicGetUserByUserIdV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetUserByUserIdV3.cs) |
@@ -252,7 +255,7 @@
 |---|---|---|---|---|
 | [DEPRECATED] `/iam/oauth/authorize` | POST | Authorization | [Authorization](../../AccelByte.Sdk/Api/Iam/Operation/OAuth/Authorization.cs) | [Authorization](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth/Authorization.cs) |
 | [DEPRECATED] `/iam/oauth/jwks` | GET | GetJWKS | [GetJWKS](../../AccelByte.Sdk/Api/Iam/Operation/OAuth/GetJWKS.cs) | [GetJWKS](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth/GetJWKS.cs) |
-| [DEPRECATED] `/iam/oauth/namespaces/{namespace}/platforms/{platformId}/token` | POST | PlatformTokenRequestHandler | [PlatformTokenRequestHandler](../../AccelByte.Sdk/Api/Iam/Operation/OAuth/PlatformTokenRequestHandler.cs) | [PlatformTokenRequestHandler](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth/PlatformTokenRequestHandler.cs) |
+| [DEPRECATED] `/iam/oauth/namespaces/{namespace}/platforms/{platformId}/token` | POST | NamespaceScopedPlatformTokenGrant | [NamespaceScopedPlatformTokenGrant](../../AccelByte.Sdk/Api/Iam/Operation/OAuth/NamespaceScopedPlatformTokenGrant.cs) | [NamespaceScopedPlatformTokenGrant](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth/NamespaceScopedPlatformTokenGrant.cs) |
 | [DEPRECATED] `/iam/oauth/namespaces/{namespace}/users/{userId}/revoke` | POST | RevokeUser | [RevokeUser](../../AccelByte.Sdk/Api/Iam/Operation/OAuth/RevokeUser.cs) | [RevokeUser](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth/RevokeUser.cs) |
 | [DEPRECATED] `/iam/oauth/revocationlist` | GET | GetRevocationList | [GetRevocationList](../../AccelByte.Sdk/Api/Iam/Operation/OAuth/GetRevocationList.cs) | [GetRevocationList](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth/GetRevocationList.cs) |
 | [DEPRECATED] `/iam/oauth/revoke/token` | POST | RevokeToken | [RevokeToken](../../AccelByte.Sdk/Api/Iam/Operation/OAuth/RevokeToken.cs) | [RevokeToken](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth/RevokeToken.cs) |
@@ -822,7 +825,7 @@
 | `model.LinkHeadlessAccountRequest` | [ModelLinkHeadlessAccountRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelLinkHeadlessAccountRequest.cs) |
 | `model.LinkPlatformAccountRequest` | [ModelLinkPlatformAccountRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelLinkPlatformAccountRequest.cs) |
 | `model.LinkPlatformAccountWithProgressionRequest` | [ModelLinkPlatformAccountWithProgressionRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelLinkPlatformAccountWithProgressionRequest.cs) |
-| `model.LinkRequest` | [ModelLinkRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelLinkRequest.cs) |
+| `model.LinkRequestResponse` | [ModelLinkRequestResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelLinkRequestResponse.cs) |
 | `model.LinkingHistoryResponseWithPaginationV3` | [ModelLinkingHistoryResponseWithPaginationV3](../../AccelByte.Sdk/Api/Iam/Model/ModelLinkingHistoryResponseWithPaginationV3.cs) |
 | `model.ListAssignedUsersV4Response` | [ModelListAssignedUsersV4Response](../../AccelByte.Sdk/Api/Iam/Model/ModelListAssignedUsersV4Response.cs) |
 | `model.ListBulkUserBanResponseV3` | [ModelListBulkUserBanResponseV3](../../AccelByte.Sdk/Api/Iam/Model/ModelListBulkUserBanResponseV3.cs) |
@@ -860,6 +863,7 @@
 | `model.PublicUserResponseV3` | [ModelPublicUserResponseV3](../../AccelByte.Sdk/Api/Iam/Model/ModelPublicUserResponseV3.cs) |
 | `model.PublicUserUpdateRequestV3` | [ModelPublicUserUpdateRequestV3](../../AccelByte.Sdk/Api/Iam/Model/ModelPublicUserUpdateRequestV3.cs) |
 | `model.PublicUsersResponse` | [ModelPublicUsersResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelPublicUsersResponse.cs) |
+| `model.ReAuthRequest` | [ModelReAuthRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelReAuthRequest.cs) |
 | `model.RemoveUserRoleV4Request` | [ModelRemoveUserRoleV4Request](../../AccelByte.Sdk/Api/Iam/Model/ModelRemoveUserRoleV4Request.cs) |
 | `model.ResetPasswordRequest` | [ModelResetPasswordRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelResetPasswordRequest.cs) |
 | `model.ResetPasswordRequestV3` | [ModelResetPasswordRequestV3](../../AccelByte.Sdk/Api/Iam/Model/ModelResetPasswordRequestV3.cs) |
@@ -968,6 +972,7 @@
 | `model.VerificationCodeResponse` | [ModelVerificationCodeResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelVerificationCodeResponse.cs) |
 | `model.VerifyRegistrationCode` | [ModelVerifyRegistrationCode](../../AccelByte.Sdk/Api/Iam/Model/ModelVerifyRegistrationCode.cs) |
 | `model.WebLinkingResponse` | [ModelWebLinkingResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelWebLinkingResponse.cs) |
+| `model.WebReauthProcessResponse` | [ModelWebReauthProcessResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelWebReauthProcessResponse.cs) |
 | `model.userUnbanCreateRequestV3` | [ModelUserUnbanCreateRequestV3](../../AccelByte.Sdk/Api/Iam/Model/ModelUserUnbanCreateRequestV3.cs) |
 | `oauthapi.RevocationList` | [OauthapiRevocationList](../../AccelByte.Sdk/Api/Iam/Model/OauthapiRevocationList.cs) |
 | `oauthcommon.ASMetadataResponse` | [OauthcommonASMetadataResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthcommonASMetadataResponse.cs) |

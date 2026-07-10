@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             get { return Operation.GetAppV2.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public CreateAppV2.CreateAppV2Builder CreateAppV2Op
         {
             get { return Operation.CreateAppV2.Builder.SetWrapperObject(this); }
@@ -93,6 +94,8 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ApimodelAppItem? CreateAppV2(CreateAppV2 input)
         {
             var response = _sdk.RunRequest(input);
@@ -109,6 +112,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public void DeleteAppV2(DeleteAppV2 input)
         {
             var response = _sdk.RunRequest(input);

@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// BulkSaveSubscriptionAppNotificationV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP:ALERT:SUBSCRIPTION [UPDATE]`
-    /// 
     /// Bulk update of users subscribed to an app's notifications.
     /// 
     /// Request body:

@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// GetListOfDeploymentV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:DEPLOYMENT [READ]`
-    /// 
     /// Filters the List of Deployments
     /// 
     /// This endpoint intended to get list of Deployment done for the given publisher and game.

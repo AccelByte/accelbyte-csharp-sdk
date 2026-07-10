@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string? Status { get; set; }
 
         [SdkCommandArgument("userId")]
-        public string? UserId { get; set; }
+        public string UserId { get; set; } = String.Empty;
 
         public QueryFulfillmentHistoriesCommand(AccelByteSDK sdk)
         {
@@ -60,14 +60,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 opBuilder.SetOffset((int)Offset);
             if (Status != null)
                 opBuilder.SetStatus(QueryFulfillmentHistoriesStatus.NewValue(Status));
-            if (UserId != null)
-                opBuilder.SetUserId((string)UserId);
 
 
 
 
             QueryFulfillmentHistories operation = opBuilder.Build(
-                Namespace
+                Namespace,
+                UserId
             );
 
 

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// deleteGameSession
     ///
-    /// Delete a game session.
+    /// Permanently deletes a game session. Only the session leader or an admin can delete the session. Any allocated dedicated server will be released.
     /// </summary>
     public class DeleteGameSession : AccelByte.Sdk.Core.Operation
     {

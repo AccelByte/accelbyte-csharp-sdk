@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminSyncDSMCConfiguration
     ///
-    /// sync dsmc configuration.
+    /// **Deprecated.** Synchronizes the dedicated server manager controller configuration from DSMC. The DSMC config is cached locally for use during session creation.
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminSyncDSMCConfiguration : AccelByte.Sdk.Core.Operation

@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// CreateDeploymentV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:DEPLOYMENT [CREATE]`
-    /// 
     /// Creates Deployment for extend service
     /// 
     /// This Endpoint will create new deployment and apply all of the secrets and variable as environment variable

@@ -67,6 +67,10 @@ namespace AccelByte.Sdk.Api.Challenge.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Tags { get; set; }
 
+        [JsonPropertyName("templateSlots")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<ModelChallengeSlotResponse>? TemplateSlots { get; set; }
+
         [JsonPropertyName("updatedAt")]
         public string? UpdatedAt { get; set; }
 

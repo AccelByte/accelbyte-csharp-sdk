@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// publicGameSessionCancel
     ///
-    /// cancel a game session invitation.
+    /// Cancels a pending game session invitation sent to the specified user. Only the session leader or the inviting member can cancel the invitation.
     /// </summary>
     public class PublicGameSessionCancel : AccelByte.Sdk.Core.Operation
     {

@@ -16,7 +16,8 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// RuleSetDetails
     ///
-    /// Get details for a specific rule set
+    /// Get details for a specific rule set, including its name and the rule data used to
+    /// configure matchmaking logic.
     /// </summary>
     public class RuleSetDetails : AccelByte.Sdk.Core.Operation
     {

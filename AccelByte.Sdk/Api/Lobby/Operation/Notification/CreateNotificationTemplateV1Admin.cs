@@ -19,10 +19,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// Create new notification template. Include handlebars {{key}} for replaceable contexts. The key inside
     /// handlebars will be the key to be replaced when sending notification. Already existing template with the same
     /// slug and language can not be created.
-    /// 
     /// Check model description for detailed input restrictions.
-    /// 
-    /// Action Code: 50204
     /// </summary>
     public class CreateNotificationTemplateV1Admin : AccelByte.Sdk.Core.Operation
     {

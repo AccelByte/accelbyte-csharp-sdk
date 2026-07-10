@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminUpdateGlobalConfiguration
     ///
-    /// Upsert global configuration data.
+    /// Creates or replaces the global configuration. If no configuration exists, a new one is created. All provided fields are applied.
     /// </summary>
     public class AdminUpdateGlobalConfiguration : AccelByte.Sdk.Core.Operation
     {

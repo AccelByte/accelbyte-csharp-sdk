@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteAppImagesV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:IMAGE [DELETE]`
-    /// 
     /// Deletes the images uploaded to the repository
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

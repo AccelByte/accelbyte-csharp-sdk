@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// ListAppUI
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APPUI [READ]`
-    /// 
     /// Retrieves a paginated list of App UI instances. Supports filtering by name and pagination using limit/offset.
     /// </summary>
     public class ListAppUI : AccelByte.Sdk.Core.Operation

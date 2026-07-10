@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteSubscriptionAppNotificationByUserIDV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP:ALERT:SUBSCRIPTION [DELETE]`
-    /// 
     /// Remove a user from the notification subscription by user ID.
     /// </summary>
     public class DeleteSubscriptionAppNotificationByUserIDV2 : AccelByte.Sdk.Core.Operation

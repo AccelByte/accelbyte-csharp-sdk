@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Reporting.Model
 {
     public class RestapiModerationRuleActionsResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("autoResolve")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? AutoResolve { get; set; }
+
         [JsonPropertyName("banAccount")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public RestapiBanAccountActionResponse? BanAccount { get; set; }

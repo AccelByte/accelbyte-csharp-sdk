@@ -142,6 +142,18 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --userId <userId value - optional>
 ```
 
+### Operation AdminMoveGoalToSlot
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn challenge \
+    --op adminmovegoaltoslot \
+    --challengeCode <challengeCode value> \
+    --code <code value> \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
 ### Operation AdminGetPeriods
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
@@ -173,6 +185,15 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --limit <limit value - optional> \
     --offset <offset value - optional> \
     --userId <userId value - optional>
+```
+
+### Operation AdminGetChallengeSlots
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn challenge \
+    --op admingetchallengeslots \
+    --challengeCode <challengeCode value> \
+    --namespace <namespace value>
 ```
 
 ### Operation AdminDeleteTiedChallenge
@@ -307,11 +328,11 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation GetChallenges
+### Operation PublicGetChallenges
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn challenge \
-    --op getchallenges \
+    --op publicgetchallenges \
     --namespace <namespace value> \
     --keyword <keyword value - optional> \
     --limit <limit value - optional> \
@@ -369,11 +390,11 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation EvaluateMyProgress
+### Operation PublicEvaluateMyProgress
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn challenge \
-    --op evaluatemyprogress \
+    --op publicevaluatemyprogress \
     --namespace <namespace value> \
     --challengeCode <challengeCode value - optional> \
     --includeOneTimeEvent <includeOneTimeEvent value - optional>

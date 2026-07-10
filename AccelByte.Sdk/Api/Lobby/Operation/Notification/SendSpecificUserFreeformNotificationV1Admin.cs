@@ -17,7 +17,6 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// sendSpecificUserFreeformNotificationV1Admin
     ///
     /// Sends notification to a user.
-    /// Action Code: 50211
     /// </summary>
     public class SendSpecificUserFreeformNotificationV1Admin : AccelByte.Sdk.Core.Operation
     {

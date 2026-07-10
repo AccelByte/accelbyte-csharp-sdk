@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// UpdateVariableV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:VARIABLE [UPDATE]`
-    /// 
     /// Update an environment variable.
     /// Request body:
     /// - value : configuration value - Required.

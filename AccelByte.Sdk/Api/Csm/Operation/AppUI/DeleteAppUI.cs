@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteAppUI
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APPUI [DELETE]`
-    /// 
     /// Permanently deletes an App UI instance and schedules cleanup of associated S3 assets.
     /// </summary>
     public class DeleteAppUI : AccelByte.Sdk.Core.Operation

@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// getSingleTemplateLocalizationV1Admin
     ///
-    /// Get a template localization
-    /// 
-    /// Action Code: 50207
+    /// Get a single notification template localization by slug and language.
     /// </summary>
     public class GetSingleTemplateLocalizationV1Admin : AccelByte.Sdk.Core.Operation
     {

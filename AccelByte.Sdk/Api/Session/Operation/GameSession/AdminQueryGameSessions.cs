@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminQueryGameSessions
     ///
-    /// Get all game sessions.
+    /// Returns paginated list of game sessions matching the provided filter criteria. Supports filtering by namespace, status, members, and joinability.
     /// </summary>
     public class AdminQueryGameSessions : AccelByte.Sdk.Core.Operation
     {

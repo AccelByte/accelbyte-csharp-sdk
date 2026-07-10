@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// CreateSubscriptionHandler
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:ASYNCMESSAGING:SUBSCRIPTIONS [CREATE]`
-    /// 
     /// Subscribe App queue to given Topic name list inside a game namespace.
     /// </summary>
     public class CreateSubscriptionHandler : AccelByte.Sdk.Core.Operation

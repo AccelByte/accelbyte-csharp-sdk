@@ -37,11 +37,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
         [SdkCommandArgument("appName")]
         public string? AppName { get; set; }
 
+        [SdkCommandArgument("gameNamespace")]
+        public string? GameNamespace { get; set; }
+
         [SdkCommandArgument("limit")]
         public long? Limit { get; set; }
-
-        [SdkCommandArgument("namespace_")]
-        public string? Namespace { get; set; }
 
         [SdkCommandArgument("offset")]
         public long? Offset { get; set; }
@@ -59,10 +59,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 
             if (AppName != null)
                 opBuilder.SetAppName((string)AppName);
+            if (GameNamespace != null)
+                opBuilder.SetGameNamespace((string)GameNamespace);
             if (Limit != null)
                 opBuilder.SetLimit((long)Limit);
-            if (Namespace != null)
-                opBuilder.SetNamespace((string)Namespace);
             if (Offset != null)
                 opBuilder.SetOffset((long)Offset);
 

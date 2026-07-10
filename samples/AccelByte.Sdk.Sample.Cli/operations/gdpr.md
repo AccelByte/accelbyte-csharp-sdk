@@ -349,6 +349,58 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 
 ```
 
+### Operation PublicSubmitMyHeadlessDeletionRequest
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn gdpr \
+    --op publicsubmitmyheadlessdeletionrequest \
+
+```
+
+### Operation PublicSubmitMyHeadlessPersonalDataRequest
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn gdpr \
+    --op publicsubmitmyheadlesspersonaldatarequest \
+    --email <email value - optional> \
+    --languageTag <languageTag value - optional>
+```
+
+### Operation PublicGenerateMyHeadlessPersonalDataURL
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn gdpr \
+    --op publicgeneratemyheadlesspersonaldataurl \
+    --requestDate <requestDate value>
+```
+
+### Operation PublicGetMyPersonalDataRequests
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn gdpr \
+    --op publicgetmypersonaldatarequests \
+
+```
+
+### Operation PublicSubmitMyPersonalDataRequest
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn gdpr \
+    --op publicsubmitmypersonaldatarequest \
+    --email <email value - optional> \
+    --languageTag <languageTag value - optional> \
+    --platformId <platformId value> \
+    --platformToken <platformToken value>
+```
+
+### Operation PublicCancelMyPersonalDataRequest
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn gdpr \
+    --op publiccancelmypersonaldatarequest \
+    --requestDate <requestDate value>
+```
+
 ### Operation S2SGetListFinishedAccountDeletionRequest
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \

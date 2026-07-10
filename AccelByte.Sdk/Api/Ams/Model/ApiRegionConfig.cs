@@ -24,6 +24,10 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("region")]
         public string? Region { get; set; }
 
+        [JsonPropertyName("state")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? State { get; set; }
+
     }
 
 

@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// sendMultipleUsersFreeformNotificationV1Admin
     ///
-    /// Sends notification to multiple user.
-    /// Action Code: 50211
+    /// Sends freeform notification to multiple users by user ID list.
     /// </summary>
     public class SendMultipleUsersFreeformNotificationV1Admin : AccelByte.Sdk.Core.Operation
     {

@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// getNotificationTopicV1Admin
     ///
-    /// Get topic information by topic name.
-    /// 
-    /// Action Code: 50215
+    /// Get notification topic information by topic name.
     /// </summary>
     public class GetNotificationTopicV1Admin : AccelByte.Sdk.Core.Operation
     {

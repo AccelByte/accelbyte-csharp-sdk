@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// CreateTopicHandler
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:ASYNCMESSAGING:TOPICS [CREATE]`
-    /// 
     /// Create New Async Messaging Topic, the topic name is unique inside a game namespace.
     /// </summary>
     public class CreateTopicHandler : AccelByte.Sdk.Core.Operation

@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteSubscriptionAppNotificationV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP:ALERT:SUBSCRIPTION [DELETE]`
-    /// 
     /// Remove a user from the notification subscription.
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

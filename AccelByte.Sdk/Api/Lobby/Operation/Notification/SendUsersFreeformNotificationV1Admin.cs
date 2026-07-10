@@ -17,8 +17,6 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// sendUsersFreeformNotificationV1Admin
     ///
     /// Sends notification to all connected users in a namespace.
-    /// 
-    /// Action Code: 50201
     /// </summary>
     public class SendUsersFreeformNotificationV1Admin : AccelByte.Sdk.Core.Operation
     {

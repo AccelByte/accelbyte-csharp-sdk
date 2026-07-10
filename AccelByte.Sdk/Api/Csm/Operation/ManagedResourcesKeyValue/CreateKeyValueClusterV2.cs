@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// CreateKeyValueClusterV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:KEYVALUE:CLUSTERS [CREATE]`
-    /// 
     /// Provision Key-Value cluster using AWS Valkey Serverless that can be used by extend apps in game namespace within the studio.
     /// 
     /// Cluster limits:

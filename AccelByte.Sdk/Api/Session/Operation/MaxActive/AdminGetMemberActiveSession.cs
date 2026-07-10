@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// adminGetMemberActiveSession
     ///
     /// 
-    /// Get Member Active Session.
+    /// Returns the number of active sessions the specified user is participating in under the given configuration template.
     /// </summary>
     public class AdminGetMemberActiveSession : AccelByte.Sdk.Core.Operation
     {

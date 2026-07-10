@@ -46,6 +46,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
         {
             AccelByte.Sdk.Api.Csm.Wrapper.AppV2 wrapper = new AccelByte.Sdk.Api.Csm.Wrapper.AppV2(_SDK);
 
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Csm.Operation.CreateAppV2.Builder;
 
 
@@ -58,12 +59,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
+#pragma warning restore ab_deprecated_operation
 
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Csm.Model.ApimodelAppItem? response = wrapper.CreateAppV2(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

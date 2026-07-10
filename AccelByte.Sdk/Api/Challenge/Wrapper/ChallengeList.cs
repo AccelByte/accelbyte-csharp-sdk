@@ -19,9 +19,9 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         }
 
         #region Operation Builders
-        public GetChallenges.GetChallengesBuilder GetChallengesOp
+        public PublicGetChallenges.PublicGetChallengesBuilder PublicGetChallengesOp
         {
-            get { return Operation.GetChallenges.Builder.SetWrapperObject(this); }
+            get { return Operation.PublicGetChallenges.Builder.SetWrapperObject(this); }
         }
         public PublicGetScheduledGoals.PublicGetScheduledGoalsBuilder PublicGetScheduledGoalsOp
         {
@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         }
         #endregion
 
-        public Model.ModelListChallengeResponse? GetChallenges(GetChallenges input)
+        public Model.ModelListChallengeResponse? PublicGetChallenges(PublicGetChallenges input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.ModelListChallengeResponse?> GetChallengesAsync(GetChallenges input)
+        public async Task<Model.ModelListChallengeResponse?> PublicGetChallengesAsync(PublicGetChallenges input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

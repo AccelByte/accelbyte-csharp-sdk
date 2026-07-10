@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("includeHiddenUsers")]
+        public bool? IncludeHiddenUsers { get; set; }
+
         [SdkCommandArgument("limit")]
         public long? Limit { get; set; }
 
@@ -51,6 +54,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 
             var opBuilder = AccelByte.Sdk.Api.Leaderboard.Operation.GetAllTimeLeaderboardRankingAdminV3.Builder;
 
+            if (IncludeHiddenUsers != null)
+                opBuilder.SetIncludeHiddenUsers((bool)IncludeHiddenUsers);
             if (Limit != null)
                 opBuilder.SetLimit((long)Limit);
             if (Offset != null)

@@ -16,14 +16,9 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// AdminGeneratePersonalDataURL
     ///
-    /// 
-    /// 
-    /// Required permission `ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [READ]` and scope `account`
-    /// 
-    /// 
-    /// 
-    /// 
-    /// If admin request data for themselves, password is need to be set
+    /// Generate personal data download url.
+    /// If admin request data for themselves, password is need to be set.
+    /// Scope: account
     /// </summary>
     public class AdminGeneratePersonalDataURL : AccelByte.Sdk.Core.Operation
     {

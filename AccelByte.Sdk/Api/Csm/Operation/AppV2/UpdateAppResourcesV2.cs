@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// UpdateAppResourcesV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP [UPDATE]`
-    /// 
     /// Update app resources provided on request body
     /// </summary>
     public class UpdateAppResourcesV2 : AccelByte.Sdk.Core.Operation

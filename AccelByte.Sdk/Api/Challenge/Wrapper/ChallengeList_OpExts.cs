@@ -13,26 +13,26 @@ namespace AccelByte.Sdk.Api
     public static class ChallengeChallengeList_OpExts
     {
         public static Challenge.Model.ModelListChallengeResponse? Execute(
-            this GetChallenges.GetChallengesBuilder builder,
+            this PublicGetChallenges.PublicGetChallengesBuilder builder,
             string namespace_
         )
         {
-            GetChallenges op = builder.Build(
+            PublicGetChallenges op = builder.Build(
                 namespace_
             );
 
-            return ((Challenge.Wrapper.ChallengeList)builder.WrapperObject!).GetChallenges(op);
+            return ((Challenge.Wrapper.ChallengeList)builder.WrapperObject!).PublicGetChallenges(op);
         }
         public static async Task<Challenge.Model.ModelListChallengeResponse?> ExecuteAsync(
-            this GetChallenges.GetChallengesBuilder builder,
+            this PublicGetChallenges.PublicGetChallengesBuilder builder,
             string namespace_
         )
         {
-            GetChallenges op = builder.Build(
+            PublicGetChallenges op = builder.Build(
                 namespace_
             );
 
-            return await ((Challenge.Wrapper.ChallengeList)builder.WrapperObject!).GetChallengesAsync(op);
+            return await ((Challenge.Wrapper.ChallengeList)builder.WrapperObject!).PublicGetChallengesAsync(op);
         }
         public static Challenge.Model.ModelGetGoalsResponse? Execute(
             this PublicGetScheduledGoals.PublicGetScheduledGoalsBuilder builder,

@@ -3724,7 +3724,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetUserByPlatformUserIDV3Async(op);
         }
-        public static Iam.Model.ModelLinkRequest? Execute(
+        public static Iam.Model.ModelReAuthRequest? Execute(
             this PublicGetAsyncStatus.PublicGetAsyncStatusBuilder builder,
             string namespace_,
             string requestId
@@ -3737,7 +3737,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetAsyncStatus(op);
         }
-        public static async Task<Iam.Model.ModelLinkRequest?> ExecuteAsync(
+        public static async Task<Iam.Model.ModelReAuthRequest?> ExecuteAsync(
             this PublicGetAsyncStatus.PublicGetAsyncStatusBuilder builder,
             string namespace_,
             string requestId
@@ -3751,7 +3751,7 @@ namespace AccelByte.Sdk.Api
             return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetAsyncStatusAsync(op);
         }
 
-        public static Iam.Model.ModelLinkRequest<T1>? Execute<T1>(
+        public static Iam.Model.ModelReAuthRequest<T1>? Execute<T1>(
             this PublicGetAsyncStatus.PublicGetAsyncStatusBuilder builder,
             string namespace_,
             string requestId
@@ -3764,7 +3764,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetAsyncStatus<T1>(op);
         }
-        public static async Task<Iam.Model.ModelLinkRequest<T1>?> ExecuteAsync<T1>(
+        public static async Task<Iam.Model.ModelReAuthRequest<T1>?> ExecuteAsync<T1>(
             this PublicGetAsyncStatus.PublicGetAsyncStatusBuilder builder,
             string namespace_,
             string requestId
@@ -4423,7 +4423,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicWebLinkPlatformEstablishAsync(op);
         }
-        public static Iam.Model.ModelLinkRequest? Execute(
+        public static Iam.Model.ModelReAuthRequest? Execute(
             this PublicProcessWebLinkPlatformV3.PublicProcessWebLinkPlatformV3Builder builder,
             string state,
             string namespace_,
@@ -4438,7 +4438,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicProcessWebLinkPlatformV3(op);
         }
-        public static async Task<Iam.Model.ModelLinkRequest?> ExecuteAsync(
+        public static async Task<Iam.Model.ModelReAuthRequest?> ExecuteAsync(
             this PublicProcessWebLinkPlatformV3.PublicProcessWebLinkPlatformV3Builder builder,
             string state,
             string namespace_,
@@ -4454,7 +4454,7 @@ namespace AccelByte.Sdk.Api
             return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicProcessWebLinkPlatformV3Async(op);
         }
 
-        public static Iam.Model.ModelLinkRequest<T1>? Execute<T1>(
+        public static Iam.Model.ModelReAuthRequest<T1>? Execute<T1>(
             this PublicProcessWebLinkPlatformV3.PublicProcessWebLinkPlatformV3Builder builder,
             string state,
             string namespace_,
@@ -4469,7 +4469,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicProcessWebLinkPlatformV3<T1>(op);
         }
-        public static async Task<Iam.Model.ModelLinkRequest<T1>?> ExecuteAsync<T1>(
+        public static async Task<Iam.Model.ModelReAuthRequest<T1>?> ExecuteAsync<T1>(
             this PublicProcessWebLinkPlatformV3.PublicProcessWebLinkPlatformV3Builder builder,
             string state,
             string namespace_,
@@ -4483,6 +4483,96 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicProcessWebLinkPlatformV3Async<T1>(op);
+        }
+        public static Iam.Model.ModelWebLinkingResponse? Execute(
+            this PublicWebReauthPlatform.PublicWebReauthPlatformBuilder builder,
+            string namespace_,
+            string platformId,
+            string operation
+        )
+        {
+            PublicWebReauthPlatform op = builder.Build(
+                namespace_,
+                platformId,
+                operation
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicWebReauthPlatform(op);
+        }
+        public static async Task<Iam.Model.ModelWebLinkingResponse?> ExecuteAsync(
+            this PublicWebReauthPlatform.PublicWebReauthPlatformBuilder builder,
+            string namespace_,
+            string platformId,
+            string operation
+        )
+        {
+            PublicWebReauthPlatform op = builder.Build(
+                namespace_,
+                platformId,
+                operation
+            );
+
+            return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicWebReauthPlatformAsync(op);
+        }
+        public static string Execute(
+            this PublicWebReauthPlatformEstablish.PublicWebReauthPlatformEstablishBuilder builder,
+            string namespace_,
+            string platformId,
+            string state
+        )
+        {
+            PublicWebReauthPlatformEstablish op = builder.Build(
+                namespace_,
+                platformId,
+                state
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicWebReauthPlatformEstablish(op);
+        }
+        public static async Task<string> ExecuteAsync(
+            this PublicWebReauthPlatformEstablish.PublicWebReauthPlatformEstablishBuilder builder,
+            string namespace_,
+            string platformId,
+            string state
+        )
+        {
+            PublicWebReauthPlatformEstablish op = builder.Build(
+                namespace_,
+                platformId,
+                state
+            );
+
+            return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicWebReauthPlatformEstablishAsync(op);
+        }
+        public static Iam.Model.ModelWebReauthProcessResponse? Execute(
+            this PublicWebReauthPlatformProcess.PublicWebReauthPlatformProcessBuilder builder,
+            string state,
+            string namespace_,
+            string platformId
+        )
+        {
+            PublicWebReauthPlatformProcess op = builder.Build(
+                state,
+                namespace_,
+                platformId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicWebReauthPlatformProcess(op);
+        }
+        public static async Task<Iam.Model.ModelWebReauthProcessResponse?> ExecuteAsync(
+            this PublicWebReauthPlatformProcess.PublicWebReauthPlatformProcessBuilder builder,
+            string state,
+            string namespace_,
+            string platformId
+        )
+        {
+            PublicWebReauthPlatformProcess op = builder.Build(
+                state,
+                namespace_,
+                platformId
+            );
+
+            return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicWebReauthPlatformProcessAsync(op);
         }
         public static Iam.Model.ModelUsersPlatformInfosResponse? Execute(
             this PublicGetUsersPlatformInfosV3.PublicGetUsersPlatformInfosV3Builder builder,

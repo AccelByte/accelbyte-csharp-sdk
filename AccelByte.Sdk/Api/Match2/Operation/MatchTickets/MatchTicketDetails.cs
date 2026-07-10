@@ -16,7 +16,8 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// MatchTicketDetails
     ///
-    /// Get details for a specific match ticket
+    /// Get details for a specific match ticket, including its current matching status and
+    /// the session ID if a match has been found.
     /// </summary>
     public class MatchTicketDetails : AccelByte.Sdk.Core.Operation
     {

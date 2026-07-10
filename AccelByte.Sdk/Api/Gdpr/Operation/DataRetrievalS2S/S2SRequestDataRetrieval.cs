@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     ///
     /// Scope: account
     /// 
-    /// Submit user personal data retrieval request.
+    /// Submit user's personal data request.
     /// 
     /// **Limitation:** This API only accepts requests with a publisher userId and does not support game userId requests at this time.
     /// 

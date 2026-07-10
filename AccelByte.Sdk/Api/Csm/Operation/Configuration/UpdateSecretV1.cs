@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// UpdateSecretV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:SECRET [UPDATE]`
-    /// 
     /// Update an environment secret.
     /// Request body:
     /// - value : configuration value - Required.

@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// UnsubscribeTopicHandler
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:ASYNCMESSAGING:SUBSCRIPTIONS [DELETE]`
-    /// 
     /// Unsubscribe App queue from a topic by Topic Name.
     /// </summary>
     public class UnsubscribeTopicHandler : AccelByte.Sdk.Core.Operation

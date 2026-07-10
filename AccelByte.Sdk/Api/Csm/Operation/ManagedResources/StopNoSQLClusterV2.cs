@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// StopNoSQLClusterV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:NOSQL:CLUSTERS [UPDATE]`
-    /// 
     /// Stop NoSQL cluster.
     /// You can only start the cluster when its status is "available".
     /// 

@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteSecretV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:SECRET [DELETE]`
-    /// 
     /// Delete an environment secret.
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

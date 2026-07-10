@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteSQLClusterV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:SQL:CLUSTERS [DELETE]`
-    /// 
     /// You can only delete the cluster when its status is "available".
     /// 
     /// Deleting the cluster will:

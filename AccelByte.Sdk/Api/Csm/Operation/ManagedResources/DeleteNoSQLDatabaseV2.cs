@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// <summary>
     /// DeleteNoSQLDatabaseV2
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:NOSQL:DATABASES [DELETE]`
-    /// 
     /// Deletes a NoSQL database and its credentials associated with given extend app and game namespace. The database will be removed from the provisioned NoSQL cluster.
     /// </summary>
     public class DeleteNoSQLDatabaseV2 : AccelByte.Sdk.Core.Operation

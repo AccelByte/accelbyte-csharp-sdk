@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// adminReconcileMaxActiveSession
     ///
     /// 
-    /// Reconcile Max Active Session.
+    /// Reconciles the max active session count for the specified configuration template. Scans active sessions and updates the counter to reflect the actual count.
     /// </summary>
     public class AdminReconcileMaxActiveSession : AccelByte.Sdk.Core.Operation
     {

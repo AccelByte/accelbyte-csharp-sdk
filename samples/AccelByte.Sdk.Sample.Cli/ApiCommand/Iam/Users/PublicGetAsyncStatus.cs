@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             );
 
 
-            AccelByte.Sdk.Api.Iam.Model.ModelLinkRequest? response = wrapper.PublicGetAsyncStatus(operation);
+            AccelByte.Sdk.Api.Iam.Model.ModelReAuthRequest? response = wrapper.PublicGetAsyncStatus(operation);
             if (response == null)
                 return "No response from server.";
 

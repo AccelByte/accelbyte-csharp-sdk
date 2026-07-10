@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// publicPartyReject
     ///
-    /// Reject a party invitation.
+    /// Rejects a pending party invitation. The caller must have INVITED status. Once rejected, the caller must be re-invited to rejoin.
     /// </summary>
     public class PublicPartyReject : AccelByte.Sdk.Core.Operation
     {
